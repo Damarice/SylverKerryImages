@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Sylver Kerry Images</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            color: #00d4aa;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: #00b894;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: #00d4aa;
+        }
+
+        .nav-menu a.active {
+            color: #00d4aa;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00d4aa;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #00d4aa, #00b894);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 212, 170, 0.4);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background: white;
+            margin-bottom: 4px;
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23g)"/><circle cx="800" cy="300" r="150" fill="url(%23g)"/><circle cx="400" cy="700" r="80" fill="url(%23g)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Services Overview */
+        .services-overview {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #00d4aa, #00b894);
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #00d4aa, #00b894);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #00d4aa;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00d4aa;
+            font-weight: bold;
+        }
+
+        .service-link {
+            color: #00d4aa;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .service-link:hover {
+            color: #00b894;
+        }
+
+        /* Featured Services */
+        .featured-services {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .featured-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .featured-content p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .highlight-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .highlight-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00d4aa;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .featured-image {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 400px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        /* Specialized Services */
+        .specialized-services {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .specialized-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .specialized-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .specialized-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .specialized-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .specialized-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .specialized-card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -1rem;
+            width: 2rem;
+            height: 2px;
+            background: #00d4aa;
+        }
+
+        .process-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #00d4aa, #00b894);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+        }
+
+        .process-step h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .process-step p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #00d4aa;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #00b894;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h3 {
+            color: #00d4aa;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #00d4aa;
+            transform: translateY(-2px);
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #00d4aa;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            opacity: 1;
+            color: #00d4aa;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            opacity: 0.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.95);
+                padding: 1rem 0;
+                border-top: 1px solid rgba(255,255,255,0.1);
+                animation: slideDown 0.3s ease-out forwards;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                text-align: center;
+                margin: 0.5rem 0;
+            }
+
+            .nav-menu a {
+                padding: 0.8rem 0;
+                display: block;
+                width: 100%;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .featured-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .specialized-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step::after {
+                display: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">Sylver Kerry Images</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="#" class="cta-button">Get Quote</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Our Services</h1>
+            <p>Comprehensive event management solutions tailored to exceed your expectations</p>
+        </div>
+    </section>
+
+    <section class="services-overview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Complete Event Solutions</h2>
+                <p>From intimate gatherings to large-scale international events, we deliver exceptional experiences</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <!-- Replace with your custom image -->
+                        <span>Add Product Launch Image</span>
+                    </div>
+                    <h3>Product Launches</h3>
+                    <p>Make a memorable impact with strategic planning, creative design, and flawless execution for your product launches.</p>
+                    <ul class="service-features">
+                        <li>Strategic event planning</li>
+                        <li>Creative concept development</li>
+                        <li>Media coordination</li>
+                        <li>Buzz-worthy execution</li>
+                    </ul>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <!-- Replace with your custom image -->
+                        <span>Add Conference Image</span>
+                    </div>
+                    <h3>Conferences</h3>
+                    <p>Comprehensive conference management including venue selection, agenda development, and speaker coordination.</p>
+                    <ul class="service-features">
+                        <li>Venue selection & setup</li>
+                        <li>Agenda development</li>
+                        <li>Speaker coordination</li>
+                        <li>Attendee registration</li>
+                    </ul>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <!-- Replace with your custom image -->
+                        <span>Add Government Event Image</span>
+                    </div>
+                    <h3>Government Events</h3>
+                    <p>Extensive experience in planning official ceremonies, diplomatic receptions, and public forums.</p>
+                    <ul class="service-features">
+                        <li>Official ceremonies</li>
+                        <li>Diplomatic receptions</li>
+                        <li>Public forums</li>
+                        <li>Security coordination</li>
+                    </ul>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <!-- Replace with your custom image -->
+                        <span>Add Plenary Image</span>
+                    </div>
+                    <h3>High-Level Plenaries</h3>
+                    <p>Proven track record organizing diplomatic events and formal large-scale gatherings with complex protocols.</p>
+                    <ul class="service-features">
+                        <li>Diplomatic protocols</li>
+                        <li>VIP management</li>
+                        <li>Security coordination</li>
+                        <li>International standards</li>
+                    </ul>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <!-- Replace with your custom image -->
+                        <span>Add Exhibition Image</span>
+                    </div>
+                    <h3>Exhibitions</h3>
+                    <p>Planning and executing exhibitions and trade shows that engage, inspire, and captivate audiences.</p>
+                    <ul class="service-features">
+                        <li>Exhibition planning</li>
+                        <li>Trade show management</li>
+                        <li>Booth coordination</li>
+                        <li>Visitor engagement</li>
+                    </ul>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <!-- Replace with your custom image -->
+                        <span>Add Exhibition Stand Image</span>
+                    </div>
+                    <h3>Exhibition Design & Stands</h3>
+                    <p>Creating stunning exhibition stands from concept to installation that attract attention and drive engagement.</p>
+                    <ul class="service-features">
+                        <li>Custom stand design</li>
+                        <li>Fabrication services</li>
+                        <li>Installation & setup</li>
+                        <li>Brand integration</li>
+                    </ul>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-services">
+        <div class="container">
+            <div class="featured-grid">
+                <div class="featured-content">
+                    <h3>Catering Services</h3>
+                    <p>Professional catering solutions with capacity to serve up to 3000 guests. We provide exceptional culinary experiences that complement your event perfectly.</p>
+                    <div class="featured-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-number">3000</div>
+                            <div class="highlight-label">Max Capacity</div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-number">100+</div>
+                            <div class="highlight-label">Menu Options</div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-number">24/7</div>
+                            <div class="highlight-label">Service Support</div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-number">5★</div>
+                            <div class="highlight-label">Quality Rating</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-primary">View Menu Options</a>
+                </div>
+                <div class="featured-image">
+                    <div>
+                        <i class="fas fa-utensils" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                        <div>Premium Catering Services</div>
+                        <div style="opacity: 0.8; font-size: 1rem;">Up to 3000 Guests</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="specialized-services">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Specialized Services</h2>
+                <p style="color: rgba(255,255,255,0.9);">Additional services to ensure your event's complete success</p>
+            </div>
+            <div class="specialized-grid">
+                <div class="specialized-card">
+                    <i class="fas fa-palette specialized-icon"></i>
+                    <h4>Event Branding</h4>
+                    <p>Complete visual identity and branding solutions to make your event memorable and on-brand.</p>
+                </div>
+                <div class="specialized-card">
+                    <i class="fas fa-user-tie specialized-icon"></i>
+                    <h4>Event Staffing</h4>
+                    <p>Professional event staff including hosts, greeters, floor managers, and technical support.</p>
+                </div>
+                <div class="specialized-card">
+                    <i class="fas fa-tools specialized-icon"></i>
+                    <h4>Equipment Hire</h4>
+                    <p>Complete range of event equipment rental including AV, lighting, furniture, and technical gear.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Process</h2>
+                <p>A proven methodology that ensures every event exceeds expectations</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <h4>Consultation</h4>
+                    <p>We meet with you to understand your vision, objectives, and requirements in detail.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <h4>Planning</h4>
+                    <p>Detailed planning phase including timeline, budget, logistics, and creative concept development.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <h4>Coordination</h4>
+                    <p>Vendor coordination, venue setup, and all pre-event logistics management.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <h4>Execution</h4>
+                    <p>Flawless event execution with on-site management and real-time coordination.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">5</div>
+                    <h4>Follow-up</h4>
+                    <p>Post-event analysis, feedback collection, and documentation for future reference.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Plan Your Next Event?</h2>
+            <p>Let's discuss how we can bring your vision to life with our comprehensive event management services.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn-primary">Get Free Quote</a>
+                <a href="#" class="btn-secondary">Schedule Consultation</a>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Sylver Kerry Images</h3>
+                    <p>Kenya's premier event planning and management company. We create exceptional corporate events, exhibitions, and custom event experiences that leave lasting impressions across East Africa and beyond.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Product Launches</a></li>
+                        <li><a href="#">Conferences</a></li>
+                        <li><a href="#">Government Events</a></li>
+                        <li><a href="#">Exhibitions</a></li>
+                        <li><a href="#">Event Branding</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Blog & Insights</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>Rehema House, 5th Floor</li>
+                        <li>Nairobi, Kenya</li>
+                        <li>+254 704 405 018</li>
+                        <li>sylverkerry8@gmail.com</li>
+                        <li>Mon-Fri: 8AM-6PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sylver Kerry Images. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+        <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Counter animation
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 50; // Adjust speed by changing division
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                    element.textContent = Math.floor(current) + '+';
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 40); // Update every 40ms
+        }
+
+        // Initialize counters when page loads
+        window.addEventListener('load', function() {
+            const counters = document.querySelectorAll('.stat-item h3[data-count]');
+            
+            // Add a small delay to make the animation more noticeable
+            setTimeout(() => {
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-count'));
+                    counter.parentElement.classList.add('counting');
+                    animateCounter(counter, target);
+                });
+            }, 1000); // 1 second delay after page load
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle (basic implementation)
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
