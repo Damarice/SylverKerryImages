@@ -112,12 +112,14 @@
 
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%),
+                        url('assets/img/IMG-20250703-WA0337.jpg') center/cover no-repeat;
             color: white;
             padding: 4rem 0;
             text-align: center;
             position: relative;
             overflow: hidden;
+            min-height: 60vh;
         }
 
         .hero-section::before {
@@ -170,7 +172,7 @@
         .stat-item {
             padding: 1.5rem;
             border-radius: 10px;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             transition: transform 0.3s ease;
         }
@@ -190,7 +192,7 @@
             opacity: 0.9;
         }
 
-        /* Portfolio Filters */
+        /* Portfolio Section */
         .portfolio-section {
             padding: 4rem 0;
             background: #f8f9fa;
@@ -248,13 +250,13 @@
         /* Client Logos Grid */
         .clients-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-bottom: 4rem;
         }
 
         .client-logo {
-            background: white;
+            background: #ccd7fb	;
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
@@ -262,10 +264,11 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            display: flex; /* Added for vertical centering of image */
-            flex-direction: column; /* Added for vertical centering of image */
-            align-items: center; /* Added for vertical centering of image */
-            justify-content: center; /* Added for vertical centering of image */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
         }
 
         .client-logo:hover {
@@ -290,11 +293,11 @@
 
         .client-logo img {
             max-width: 100%;
-            max-height: 80px; /* Adjust as needed for your logos */
+            max-height: 100px;
             object-fit: contain;
-            filter: grayscale(1);
+            filter: grayscale(0.3);
             transition: filter 0.3s ease;
-            margin-bottom: 1rem; /* Space between logo and name */
+            margin-bottom: 1rem;
         }
 
         .client-logo:hover img {
@@ -304,76 +307,13 @@
         .client-name {
             font-weight: bold;
             color: #333;
+            margin-bottom: 0.5rem;
         }
 
         .client-category {
             font-size: 0.9rem;
             color: #666;
             margin-top: 0.5rem;
-        }
-
-        /* Project Gallery */
-        .project-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .project-info {
-            padding: 1.5rem;
-        }
-
-        .project-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-
-        .project-description {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .project-tags {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            background: #00d4aa;
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 500;
         }
 
         /* Footer */
@@ -470,17 +410,13 @@
             }
 
             .clients-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
                 gap: 1rem;
             }
 
             .filter-buttons {
                 flex-direction: column;
                 align-items: center;
-            }
-
-            .project-gallery {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -534,142 +470,49 @@
 
         <section class="portfolio-section">
             <div class="portfolio-container">
-                <h2 class="section-title">Our Clients</h2>
+                <h2 class="section-title">Our Clients & Partners</h2>
                 <p class="section-subtitle">
                     We're proud to work with leading organizations across various industries, 
                     delivering world-class events that exceed expectations.
                 </p>
 
                 <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">All Clients</button>
-                    <button class="filter-btn" data-filter="corporate">Corporate</button>
-                    <button class="filter-btn" data-filter="government">Government</button>
-                    <button class="filter-btn" data-filter="exhibitions">Exhibitions</button>
-                    <button class="filter-btn" data-filter="conferences">Conferences</button>
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="portfolio">Portfolio</button>
+                    <button class="filter-btn" data-filter="venue-partner">Venue Partner</button>
                 </div>
 
                 <div class="clients-grid" id="clientsGrid">
-                    <div class="client-logo" data-category="corporate">
-                        <img src="images/safaricom_logo.png" alt="Safaricom Logo">
-                        <div class="client-name">Safaricom Ltd</div>
-                        <div class="client-category">Corporate Events</div>
+                    <div class="client-logo" data-category="portfolio">
+                        <img src="assets/img/1.avif" alt="FAWAG Logo">
                     </div>
 
-                    <div class="client-logo" data-category="corporate">
-                        <img src="images/kcb_logo.png" alt="KCB Bank Logo">
-                        <div class="client-name">KCB Bank</div>
-                        <div class="client-category">Product Launches</div>
+                    <div class="client-logo" data-category="portfolio">
+                        <img src="assets/img/finas.webp" alt="Finas Africa Logo">
                     </div>
 
-                    <div class="client-logo" data-category="corporate">
-                        <img src="images/equity_logo.png" alt="Equity Bank Logo">
-                        <div class="client-name">Equity Bank</div>
-                        <div class="client-category">Corporate Events</div>
+                    <div class="client-logo" data-category="portfolio">
+                        <img src="assets/img/medic-removebg-preview.png" alt="Skills M-Education Logo">
                     </div>
 
-                    <div class="client-logo" data-category="corporate">
-                        <img src="images/coca_cola_logo.png" alt="Coca Cola Logo">
-                        <div class="client-name">Coca Cola</div>
-                        <div class="client-category">Brand Activations</div>
+                    <div class="client-logo" data-category="portfolio">
+                        <img src="assets/img/sh_at_20_logo.png" alt="Superior Homes Logo">
                     </div>
 
-                    <div class="client-logo" data-category="government">
-                        <img src="images/kra_logo.png" alt="Kenya Revenue Authority Logo">
-                        <div class="client-name">Kenya Revenue Authority</div>
-                        <div class="client-category">Government Events</div>
+                    <div class="client-logo" data-category="portfolio">
+                        <img src="assets/img/ACS-Horizontal-Logo.png" alt="Africa Climate Summit Logo">
                     </div>
 
-                    <div class="client-logo" data-category="government">
-                        <img src="images/ministry_of_health_logo.png" alt="Ministry of Health Logo">
-                        <div class="client-name">Ministry of Health</div>
-                        <div class="client-category">Official Ceremonies</div>
+                    <div class="client-logo" data-category="portfolio">
+                        <img src="assets/img/logo_white.svg" alt="Nairobi Summit ICPD Logo">
                     </div>
 
-                    <div class="client-logo" data-category="government">
-                        <img src="images/nhif_logo.png" alt="NHIF Logo">
-                        <div class="client-name">NHIF</div>
-                        <div class="client-category">Public Forums</div>
+                    <div class="client-logo" data-category="portfolio">
+                        <img src="assets/img/gok-logo.png" alt="Government of Kenya Logo">
                     </div>
 
-                    <div class="client-logo" data-category="government">
-                        <img src="images/knbs_logo.png" alt="Kenya National Bureau of Statistics Logo">
-                        <div class="client-name">Kenya National Bureau of Statistics</div>
-                        <div class="client-category">Government Events</div>
-                    </div>
-
-                    <div class="client-logo" data-category="exhibitions">
-                        <img src="images/kicc_logo.png" alt="KICC Logo">
-                        <div class="client-name">KICC</div>
-                        <div class="client-category">Trade Shows</div>
-                    </div>
-
-                    <div class="client-logo" data-category="exhibitions">
-                        <img src="images/expo_group_logo.png" alt="Kenya Expo Group Logo">
-                        <div class="client-name">Kenya Expo Group</div>
-                        <div class="client-category">Exhibitions</div>
-                    </div>
-
-                    <div class="client-logo" data-category="exhibitions">
-                        <img src="images/auto_expo_logo.png" alt="Kenya Auto Expo Logo">
-                        <div class="client-name">Kenya Auto Expo</div>
-                        <div class="client-category">Exhibition Stands</div>
-                    </div>
-
-                    <div class="client-logo" data-category="exhibitions">
-                        <img src="images/tech_expo_logo.png" alt="Kenya Tech Expo Logo">
-                        <div class="client-name">Kenya Tech Expo</div>
-                        <div class="client-category">Technology Shows</div>
-                    </div>
-
-                    <div class="client-logo" data-category="conferences">
-                        <img src="images/un_logo.png" alt="United Nations Logo">
-                        <div class="client-name">United Nations</div>
-                        <div class="client-category">High-Level Plenaries</div>
-                    </div>
-
-                    <div class="client-logo" data-category="conferences">
-                        <img src="images/world_bank_logo.png" alt="World Bank Logo">
-                        <div class="client-name">World Bank</div>
-                        <div class="client-category">International Conferences</div>
-                    </div>
-
-                    <div class="client-logo" data-category="conferences">
-                        <img src="images/au_logo.png" alt="African Union Logo">
-                        <div class="client-name">African Union</div>
-                        <div class="client-category">Diplomatic Events</div>
-                    </div>
-
-                    <div class="client-logo" data-category="conferences">
-                        <img src="images/usaid_logo.png" alt="USAID Logo">
-                        <div class="client-name">USAID</div>
-                        <div class="client-category">Development Conferences</div>
-                    </div>
-
-                    <div class="client-logo" data-category="corporate">
-                        <img src="images/tusker_logo.png" alt="Tusker Logo">
-                        <div class="client-name">Tusker</div>
-                        <div class="client-category">Brand Events</div>
-                    </div>
-
-                    <div class="client-logo" data-category="corporate">
-                        <img src="images/airtel_logo.png" alt="Airtel Kenya Logo">
-                        <div class="client-name">Airtel Kenya</div>
-                        <div class="client-category">Product Launches</div>
-                    </div>
-
-                    <div class="client-logo" data-category="government">
-                        <img src="images/nairobi_county_logo.png" alt="Nairobi County Logo">
-                        <div class="client-name">Nairobi County</div>
-                        <div class="client-category">Municipal Events</div>
-                    </div>
-
-                    <div class="client-logo" data-category="exhibitions">
-                        <img src="images/agri_show_logo.png" alt="Kenya Agricultural Show Logo">
-                        <div class="client-name">Kenya Agricultural Show</div>
-                        <div class="client-category">Agricultural Exhibitions</div>
-                    </div>
-                </div>
-
+                    <div class="client-logo" data-category="venue-partner">
+                        <img src="assets/img/weblogo.webp" alt="The Edge Logo">
                     </div>
                 </div>
             </div>
@@ -744,14 +587,17 @@
             button.addEventListener('click', () => {
                 // Remove active class from all buttons
                 filterButtons.forEach(btn => btn.classList.remove('active'));
+                
                 // Add active class to clicked button
                 button.classList.add('active');
-
+                
+                // Get filter value
                 const filterValue = button.getAttribute('data-filter');
-
+                
+                // Filter client logos
                 clientLogos.forEach(logo => {
                     if (filterValue === 'all' || logo.getAttribute('data-category') === filterValue) {
-                        logo.style.display = 'flex'; // Changed to flex to maintain centering
+                        logo.style.display = 'flex';
                         logo.style.animation = 'fadeIn 0.5s ease-in-out';
                     } else {
                         logo.style.display = 'none';
@@ -760,14 +606,26 @@
             });
         });
 
+        // Add fade-in animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>

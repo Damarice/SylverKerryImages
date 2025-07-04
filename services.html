@@ -126,197 +126,186 @@
             border-radius: 2px;
             transition: all 0.3s ease-in-out;
         }
-
         /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23g)"/><circle cx="800" cy="300" r="150" fill="url(%23g)"/><circle cx="400" cy="700" r="80" fill="url(%23g)"/></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        url('assets/img/A-109.jpg') center center / cover no-repeat,
+        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'><defs><radialGradient id='g'><stop offset='0%' stop-color='rgba(255,255,255,0.1)'/><stop offset='100%' stop-color='rgba(255,255,255,0)'/></radialGradient></defs><circle cx='200' cy='200' r='100' fill='url(%23g)'/><circle cx='800' cy='300' r='150' fill='url(%23g)'/><circle cx='400' cy='700' r='80' fill='url(%23g)'/></svg>") center center / contain no-repeat;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: -1; /* Ensure it's behind hero content */
+}
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
 
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            position: relative;
-            z-index: 1;
-        }
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
 
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
 
-        /* Services Overview */
-        .services-overview {
-            padding: 100px 0;
-            background: #f8f9fa;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(135deg, #00d4aa, #00b894);
-        }
-
-        .section-title p {
-            font-size: 1.1rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(135deg, #00d4aa, #00b894);
-        }
-
-        .service-image {
-            width: 100%;
-            height: 200px;
-            background: #f0f0f0;
-            border-radius: 10px;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-style: italic;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            color: #00d4aa;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .service-card p {
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .service-features li {
-            padding: 0.5rem 0;
-            color: #555;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .service-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #00d4aa;
-            font-weight: bold;
-        }
-
-        .service-link {
-            color: #00d4aa;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .service-link:hover {
-            color: #00b894;
-        }
-
+/* Services Overview */
+.services-overview {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #00d4aa, #00b894);
+}
+.section-title p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.service-card {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #00d4aa, #00b894);
+}
+.service-image {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-quality;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.service-icon {
+    font-size: 3rem;
+    color: #00d4aa;
+    margin-bottom: 1.5rem;
+}
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+.service-card p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+.service-features {
+    list-style: none;
+    margin-bottom: 2rem;
+    padding-left: 0;
+}
+.service-features li {
+    padding: 0.5rem 0;
+    color: #555;
+    position: relative;
+    padding-left: 1.5rem;
+}
+.service-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #00d4aa;
+    font-weight: bold;
+}
+.service-link {
+    color: #00d4aa;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+.service-link:hover {
+    color: #00b894;
+}
         /* Featured Services */
         .featured-services {
             padding: 100px 0;
@@ -380,49 +369,65 @@
             font-size: 1.5rem;
             text-align: center;
         }
+/* Specialized Services */
+.specialized-services {
+    padding: 100px 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+                url('assets/img/IMG-20241017-WA0367.jpg') center/cover no-repeat;
+    color: white;
+    position: relative;
+}
 
-        /* Specialized Services */
-        .specialized-services {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-        }
+/* Optional: Add overlay for better text readability */
+.specialized-services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
 
-        .specialized-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
+.specialized-services .container {
+    position: relative;
+    z-index: 2;
+}
 
-        .specialized-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
+.specialized-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
 
-        .specialized-card:hover {
-            transform: translateY(-5px);
-        }
+.specialized-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
 
-        .specialized-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
+.specialized-card:hover {
+    transform: translateY(-5px);
+}
 
-        .specialized-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
+.specialized-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
 
-        .specialized-card p {
-            opacity: 0.9;
-            line-height: 1.6;
-        }
+.specialized-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
 
-        /* Process Section */
+.specialized-card p {
+    opacity: 0.9;
+    line-height: 1.6;
+}    /* Process Section */
         .process-section {
             padding: 100px 0;
             background: #f8f9fa;
@@ -734,111 +739,109 @@
         </div>
     </section>
 
-    <section class="services-overview">
-        <div class="container">
-            <div class="section-title">
-                <h2>Complete Event Solutions</h2>
-                <p>From intimate gatherings to large-scale international events, we deliver exceptional experiences</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-image">
-                        <!-- Replace with your custom image -->
-                        <span>Add Product Launch Image</span>
-                    </div>
-                    <h3>Product Launches</h3>
-                    <p>Make a memorable impact with strategic planning, creative design, and flawless execution for your product launches.</p>
-                    <ul class="service-features">
-                        <li>Strategic event planning</li>
-                        <li>Creative concept development</li>
-                        <li>Media coordination</li>
-                        <li>Buzz-worthy execution</li>
-                    </ul>
-                    <a href="#" class="service-link">Learn More →</a>
-                </div>
+<section class="services-overview">
+  <div class="container">
+    <div class="section-title">
+      <h2>Complete Event Solutions</h2>
+      <p>From intimate gatherings to large-scale international events, we deliver exceptional experiences</p>
+    </div>
 
-                <div class="service-card">
-                    <div class="service-image">
-                        <!-- Replace with your custom image -->
-                        <span>Add Conference Image</span>
-                    </div>
-                    <h3>Conferences</h3>
-                    <p>Comprehensive conference management including venue selection, agenda development, and speaker coordination.</p>
-                    <ul class="service-features">
-                        <li>Venue selection & setup</li>
-                        <li>Agenda development</li>
-                        <li>Speaker coordination</li>
-                        <li>Attendee registration</li>
-                    </ul>
-                    <a href="#" class="service-link">Learn More →</a>
-                </div>
+    <div class="services-grid">
 
-                <div class="service-card">
-                    <div class="service-image">
-                        <!-- Replace with your custom image -->
-                        <span>Add Government Event Image</span>
-                    </div>
-                    <h3>Government Events</h3>
-                    <p>Extensive experience in planning official ceremonies, diplomatic receptions, and public forums.</p>
-                    <ul class="service-features">
-                        <li>Official ceremonies</li>
-                        <li>Diplomatic receptions</li>
-                        <li>Public forums</li>
-                        <li>Security coordination</li>
-                    </ul>
-                    <a href="#" class="service-link">Learn More →</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-image">
-                        <!-- Replace with your custom image -->
-                        <span>Add Plenary Image</span>
-                    </div>
-                    <h3>High-Level Plenaries</h3>
-                    <p>Proven track record organizing diplomatic events and formal large-scale gatherings with complex protocols.</p>
-                    <ul class="service-features">
-                        <li>Diplomatic protocols</li>
-                        <li>VIP management</li>
-                        <li>Security coordination</li>
-                        <li>International standards</li>
-                    </ul>
-                    <a href="#" class="service-link">Learn More →</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-image">
-                        <!-- Replace with your custom image -->
-                        <span>Add Exhibition Image</span>
-                    </div>
-                    <h3>Exhibitions</h3>
-                    <p>Planning and executing exhibitions and trade shows that engage, inspire, and captivate audiences.</p>
-                    <ul class="service-features">
-                        <li>Exhibition planning</li>
-                        <li>Trade show management</li>
-                        <li>Booth coordination</li>
-                        <li>Visitor engagement</li>
-                    </ul>
-                    <a href="#" class="service-link">Learn More →</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-image">
-                        <!-- Replace with your custom image -->
-                        <span>Add Exhibition Stand Image</span>
-                    </div>
-                    <h3>Exhibition Design & Stands</h3>
-                    <p>Creating stunning exhibition stands from concept to installation that attract attention and drive engagement.</p>
-                    <ul class="service-features">
-                        <li>Custom stand design</li>
-                        <li>Fabrication services</li>
-                        <li>Installation & setup</li>
-                        <li>Brand integration</li>
-                    </ul>
-                    <a href="#" class="service-link">Learn More →</a>
-                </div>
-            </div>
+      <div class="service-card">
+        <div class="service-image">
+          <img src="assets/img/DSC_4307.JPG" alt="Product Launch">
         </div>
-    </section>
+        <h3>Product Launches</h3>
+        <p>Make a memorable impact with strategic planning, creative design, and flawless execution for your product launches.</p>
+        <ul class="service-features">
+          <li>Strategic event planning</li>
+          <li>Creative concept development</li>
+          <li>Media coordination</li>
+          <li>Buzz-worthy execution</li>
+        </ul>
+        <a href="#" class="service-link">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="assets/img/DSC_4400.JPG" alt="Conference">
+        </div>
+        <h3>Conferences</h3>
+        <p>Comprehensive conference management including venue selection, agenda development, and speaker coordination.</p>
+        <ul class="service-features">
+          <li>Venue selection & setup</li>
+          <li>Agenda development</li>
+          <li>Speaker coordination</li>
+          <li>Attendee registration</li>
+        </ul>
+        <a href="#" class="service-link">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="assets/img/IMG-20241017-WA0341.jpg" alt="Government Event">
+        </div>
+        <h3>Government Events</h3>
+        <p>Extensive experience in planning official ceremonies, diplomatic receptions, and public forums.</p>
+        <ul class="service-features">
+          <li>Official ceremonies</li>
+          <li>Diplomatic receptions</li>
+          <li>Public forums</li>
+          <li>Security coordination</li>
+        </ul>
+        <a href="#" class="service-link">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="assets/img/DSC_4259.JPG" alt="Plenary">
+        </div>
+        <h3>High-Level Plenaries</h3>
+        <p>Proven track record organizing diplomatic events and formal large-scale gatherings with complex protocols.</p>
+        <ul class="service-features">
+          <li>Diplomatic protocols</li>
+          <li>VIP management</li>
+          <li>Security coordination</li>
+          <li>International standards</li>
+        </ul>
+        <a href="#" class="service-link">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="assets/img/IMG-20250703-WA0337.jpg" alt="Exhibition">
+        </div>
+        <h3>Exhibitions</h3>
+        <p>Planning and executing exhibitions and trade shows that engage, inspire, and captivate audiences.</p>
+        <ul class="service-features">
+          <li>Exhibition planning</li>
+          <li>Trade show management</li>
+          <li>Booth coordination</li>
+          <li>Visitor engagement</li>
+        </ul>
+        <a href="#" class="service-link">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="assets/img/A-49 (1).jpg" alt="Exhibition Stand">
+        </div>
+        <h3>Exhibition Design & Stands</h3>
+        <p>We build custom stands and run full-service corporate events that make brands unforgettable.</p>
+        <ul class="service-features">
+          <li>Custom stand design</li>
+          <li>Fabrication services</li>
+          <li>Installation & setup</li>
+          <li>Brand integration</li>
+        </ul>
+        <a href="#" class="service-link">Learn More →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <section class="featured-services">
         <div class="container">

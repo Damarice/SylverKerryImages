@@ -123,15 +123,19 @@
         }
 
         .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23g)"/><circle cx="800" cy="300" r="150" fill="url(%23g)"/><circle cx="400" cy="700" r="80" fill="url(%23g)"/></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        url('../assets/img/A-109.jpg') center center / cover no-repeat,
+        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'><defs><radialGradient id='g'><stop offset='0%' stop-color='rgba(255,255,255,0.1)'/><stop offset='100%' stop-color='rgba(255,255,255,0)'/></radialGradient></defs><circle cx='200' cy='200' r='100' fill='url(%23g)'/><circle cx='800' cy='300' r='150' fill='url(%23g)'/><circle cx='400' cy='700' r='80' fill='url(%23g)'/></svg>") center center / contain no-repeat;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+}
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
@@ -294,7 +298,7 @@
         /* Values Section */
         .values-section {
             padding: 100px 0;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
         }
 
@@ -333,6 +337,14 @@
             font-size: 1rem;
             opacity: 0.9;
         }
+        .values-section {
+    padding: 100px 0;
+    background: 
+        linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)),
+        url('assets/img/A-112.png') center center / cover no-repeat;
+    color: white;
+}
+
 
         /* Team Section */
         .team-section {
@@ -359,6 +371,7 @@
             color: #666;
             margin-bottom: 2rem;
         }
+    
 
         /* CTA Section */
         .cta-section {
@@ -569,33 +582,28 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Who We Are</h2>
-                <p>Leading the way in exceptional event management and experiences</p>
+<!-- About Section -->
+<section class="about-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Who We Are</h2>
+            <p>Leading the way in exceptional event management and experiences</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Sylver Kerry Images (SKI) is Kenya's premier events management company, specializing in delivering exceptional experiences for clients across diverse industries. Since our inception, we have established ourselves as the go-to partner for organizations seeking unparalleled event services and management solutions.</p>
+                
+                <p>Our expertise spans across corporate events, government ceremonies, high-level diplomatic gatherings, product launches, conferences, and large-scale exhibitions. We pride ourselves on our ability to handle complex logistics while maintaining the highest standards of professionalism and creativity.</p>
+                
+                <p>From our base in Nairobi, we serve clients across Kenya and throughout East Africa, bringing international standards and local expertise to every project we undertake.</p>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Sylver Kerry Images (SKI) is Kenya's premier events management company, specializing in delivering exceptional experiences for clients across diverse industries. Since our inception, we have established ourselves as the go-to partner for organizations seeking unparalleled event services and management solutions.</p>
-                    
-                    <p>Our expertise spans across corporate events, government ceremonies, high-level diplomatic gatherings, product launches, conferences, and large-scale exhibitions. We pride ourselves on our ability to handle complex logistics while maintaining the highest standards of professionalism and creativity.</p>
-                    
-                    <p>From our base in Nairobi, we serve clients across Kenya and throughout East Africa, bringing international standards and local expertise to every project we undertake.</p>
-                </div>
-                <div class="about-image">
-                    <div class="about-image-placeholder">
-                        <i class="fas fa-calendar-alt" style="font-size: 3rem;"></i>
-                        <div style="margin-left: 1rem;">
-                            <div>Professional Event Management</div>
-                            <div style="opacity: 0.8;">Since Day One</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="about-image">
+                <img src="assets/img/A-110.jpg" alt="About Sylver Kerry Images" style="max-width: 100%; height: auto; border-radius: 8px;">
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Vision Mission Section -->
     <section class="vision-mission">
