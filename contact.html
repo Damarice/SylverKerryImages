@@ -43,7 +43,7 @@
         }
 
         .logo {
-            color: #00d4aa ;
+            color: #1c99ed ;
             font-size: 1.8rem;
             font-weight: bold;
             text-decoration: none;
@@ -51,8 +51,13 @@
         }
 
         .logo:hover {
-            color: #00b894;
+            color: #1c99ed;
         }
+        .logo img {
+  height: 50px; /* adjust as needed */
+  width: auto;
+}
+
 
         .nav-menu {
             display: flex;
@@ -69,7 +74,7 @@
         }
 
         .nav-menu a:hover {
-            color: #00d4aa ;
+            color: #1c99ed ;
         }
 
         .nav-menu a::after {
@@ -79,7 +84,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #00d4aa ;
+            background: #1c99ed ;
             transition: width 0.3s ease;
         }
 
@@ -88,7 +93,7 @@
         }
 
         .cta-button {
-            background: linear-gradient(135deg, #00d4aa , #00b894);
+            background: linear-gradient(135deg, #1c99ed , #1c99ed);
             color: white;
             padding: 0.8rem 1.5rem;
             border: none;
@@ -121,7 +126,7 @@
         .contact-header h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #00d4aa , #00b894);
+            background: linear-gradient(135deg, #1c99ed , #1c99ed);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -150,7 +155,7 @@
         }
 
         .contact-info h2 {
-            color: #00d4aa ;
+            color: #1c99ed ;
             margin-bottom: 2rem;
             font-size: 2rem;
         }
@@ -164,14 +169,14 @@
 
         .info-item i {
             font-size: 1.5rem;
-            color: #00d4aa ;
+            color: #1c99ed ;
             margin-right: 1rem;
             width: 30px;
         }
 
         .info-item div h3 {
             margin-bottom: 0.5rem;
-            color: #00d4aa ;
+            color: #1c99ed ;
         }
 
         .info-item div p {
@@ -187,7 +192,7 @@
         }
 
         .contact-form h2 {
-            color: #00d4aa ;
+            color: #1c99ed ;
             margin-bottom: 2rem;
             font-size: 2rem;
         }
@@ -220,7 +225,7 @@
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: #00d4aa ;
+            border-color: #1c99ed ;
             box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.2);
         }
 
@@ -235,7 +240,7 @@
         }
 
         .submit-btn {
-            background: linear-gradient(135deg, #00d4aa , #00b894);
+            background: linear-gradient(135deg, #1c99ed , #1c99ed);
             color: white;
             padding: 1rem 2rem;
             border: none;
@@ -262,7 +267,7 @@
         }
 
         .map-section h2 {
-            color: #00d4aa ;
+            color: #1c99ed ;
             margin-bottom: 2rem;
             font-size: 2rem;
         }
@@ -278,7 +283,7 @@
 
         .map-placeholder i {
             font-size: 3rem;
-            color: #00d4aa ;
+            color: #1c99ed ;
             margin-bottom: 1rem;
         }
 
@@ -324,7 +329,7 @@
         }
 
         .footer-brand h3 {
-            color: #00d4aa ;
+            color: #1c99ed ;
             margin-bottom: 1rem;
         }
 
@@ -341,7 +346,7 @@
         .social-links a {
             width: 40px;
             height: 40px;
-            background: #00d4aa ;
+            background: #1c99ed ;
             color: white;
             border-radius: 50%;
             display: flex;
@@ -352,13 +357,13 @@
         }
 
         .social-links a:hover {
-            background: #00b894;
+            background: #1c99ed;
             transform: translateY(-2px);
         }
 
         .footer-section h4 {
             margin-bottom: 1rem;
-            color: #00d4aa ;
+            color: #1c99ed ;
         }
 
         .footer-section ul {
@@ -376,7 +381,7 @@
         }
 
         .footer-section a:hover {
-            color: #00d4aa ;
+            color: #1c99ed ;
         }
 
         .footer-bottom {
@@ -413,18 +418,22 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
+ <!-- Header -->
+    <header class="header" id="header">
         <div class="nav-container">
-            <a href="#" class="logo">Sylver Kerry Images</a>
-            <nav class="nav-menu">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="contact.html">Contact</a>
+            <a href="index.html" class="logo"><img src="assets/img/2D on transparent background.png" alt="Logo" /></a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </nav>
-            <a href="#" class="cta-button">Get Quote</a>
+            <button class="mobile-menu-toggle">☰</button>
+            <a href="#quote" class="cta-button">Get Quote</a>
         </div>
     </header>
 
