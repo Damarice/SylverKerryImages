@@ -99,6 +99,7 @@ section, header, footer {
     margin-bottom: var(--space-sm);
     transition: var(--transition-all);
     cursor: default;
+    font-weight: bold; /* Ensured base section titles are bold */
 }
 
 .section-title:hover {
@@ -271,7 +272,7 @@ section, header, footer {
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding-top: 100px; /* Offset for fixed header */
+    padding-top: 150px; /* Offset for fixed header - Adjusted */
 }
 
 /* Slideshow Background */
@@ -489,6 +490,7 @@ section, header, footer {
     margin-bottom: var(--space-md);
     line-height: 1.2;
     transition: var(--transition-all);
+    font-weight: bold; /* Ensured why-choose title is bold */
 }
 
 .why-choose-title:hover {
@@ -606,6 +608,12 @@ section, header, footer {
 .our-clients .section-title {
     color: var(--brand-blue);
     margin-bottom: var(--space-md);
+    font-weight: bold; /* Added to make it bold */
+    transition: var(--transition-all); /* Added for smooth hover */
+}
+
+.our-clients .section-title:hover { /* Added hover effect */
+    color: var(--brand-gray);
 }
 
 .our-clients .section-description {
@@ -672,6 +680,12 @@ section, header, footer {
 .testimonials .section-title {
     color: var(--brand-blue);
     margin-bottom: var(--space-md);
+    font-weight: bold; /* Added to make it bold */
+    transition: var(--transition-all); /* Added for smooth hover */
+}
+
+.testimonials .section-title:hover { /* Added hover effect */
+    color: var(--brand-gray);
 }
 
 .testimonials .section-description {
@@ -760,6 +774,7 @@ section, header, footer {
     color: var(--brand-blue);
     transition: color var(--transition-speed) var(--transition-timing);
     margin-bottom: var(--space-sm);
+    font-weight: bold; /* Ensured CTA h2 is bold */
 }
 
 .cta h2:hover {
@@ -851,6 +866,7 @@ section, header, footer {
     margin-bottom: var(--space-sm);
     color: var(--brand-blue);
     font-size: 1.2rem;
+    font-weight: bold; /* Ensured footer headings are bold */
 }
 
 .footer-section ul {
