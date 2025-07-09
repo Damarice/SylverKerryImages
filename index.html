@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sylver Kerry Images - Event Management</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="styles.css">
@@ -33,43 +36,78 @@
 
 <!-- Hero Section -->
 <section class="hero" id="home">
-  <div class="hero-container centered">
+  <div class="hero-slideshow">
+    <div class="slide" style="background-image: url('assets/img/1\ \(2\).png');"></div>
+    <div class="slide" style="background-image: url('assets/img/2\ \(2\).png');"></div>
+    <div class="slide" style="background-image: url('assets/img/3\ \(3\).png');"></div>
+
+  </div>
+
+  <div class="hero-container">
     <div class="hero-content">
       <h1 class="hero-title">Complete Event Solutions & Stand Fabrication Experts</h1>
       <h2 class="hero-subtitle">We Craft Spaces & Create Moments</h2>
-
-      <div class="hero-buttons">
-        <a href="https://us.bigin.online/org886997716/forms/request-a-free-quote" class="btn-primary" target="_blank">Plan Your Event</a>
-        <a href="portfolio.html" class="btn-secondary">View Our Work</a>
-      </div>
     </div>
+  </div>
+</section>
 
-    <div class="stats-section">
-      <div class="stat-item">
-        <h3 data-count="500">0</h3>
-        <p>Attendees</p>
+<!-- Hero Buttons (outside hero, below slideshow) -->
+<div class="hero-buttons-wrapper">
+  <div class="hero-buttons">
+    <a href="https://us.bigin.online/org886997716/forms/request-a-free-quote" class="btn-primary" target="_blank">Plan Your Event</a>
+    <a href="portfolio.html" class="btn-secondary">View Our Work</a>
+  </div>
+</div>
+
+<!-- Stats Section -->
+<section class="stats-section">
+  <div class="stat-item">
+    <h3 data-count="500">0</h3>
+    <p>Attendees</p>
+  </div>
+  <div class="stat-item">
+    <h3 data-count="50">0</h3>
+    <p>Corporate Clients</p>
+  </div>
+  <div class="stat-item">
+    <h3>15+</h3>
+    <p>Years Experience</p>
+  </div>
+</section>
+
+
+<section class="why-choose" id="custom-stand-fabrication">
+  <div class="why-choose-container">
+    <div class="why-choose-content">
+
+      <div class="why-choose-text">
+        <h2 class="why-choose-title">Custom Stand <span>Fabrication</span></h2>
+        <p class="why-choose-intro">
+          At Sylverkerry Images, we specialize in custom stand fabrication that transforms your brand into a powerful, physical experience. From exhibition booths and trade show stands to event structures, we design, build, and deliver high-quality, innovative stands that capture attention and drive engagement. Our in-house team manages everything from concept design to installation, ensuring your brand stands out at every event.
+        </p>
       </div>
-      <div class="stat-item">
-        <h3 data-count="50">0</h3>
-        <p>Corporate Clients</p>
+
+      <div class="why-choose-image">
+        <div class="slideshow-container" id="fabricationSlideshow">
+          <img class="slide" src="assets/img/fab1.jpg" alt="Fabrication 1">
+          <img class="slide" src="assets/img/fab2.jpg" alt="Fabrication 2">
+          <img class="slide" src="assets/img/fab3.jpg" alt="Fabrication 3">
+          <img class="slide" src="assets/img/fab4.jpg" alt="Fabrication 4">
+          <img class="slide" src="assets/img/fab5.jpg" alt="Fabrication 5">
+          <img class="slide" src="assets/img/fab6.jpg" alt="Fabrication 6">
+        </div>
       </div>
-      <div class="stat-item">
-        <h3>15+</h3>
-        <p>Years Experience</p>
-      </div>
+
     </div>
   </div>
 </section>
 
     
-<!-- Our Expertise Section -->
+<!-- Our Services Section -->
 <section class="expertise" id="services">
   <div class="expertise-container">
     <div class="section-header">
-      <h2 class="section-title">Our <span>Expertise</span></h2>
-      <h2 class="Ourexpertise-subtitle">
-        We specialize in creating exceptional experiences that elevate brands and engage audiences across East Africa and beyond.
-      </h2>
+      <h2 class="section-title">Our <span>Services</span></h2>
     </div>
 
     <div class="expertise-grid">
@@ -79,7 +117,8 @@
           <img src="assets/img/DSC_4257.JPG" alt="Corporate Events" class="expertise-img">
         </div>
         <div class="expertise-content">
-          <h3 class="expertise-title">Corporate Events</h3>
+          <h3 class="expertise-title">Event Management</h3>
+          <p>Comprehensive planning, coordination, and execution of end-to-end events.</p>
         </div>
       </div>
 
@@ -89,7 +128,8 @@
           <img src="assets/img/A-23.jpg" alt="Exhibition Stands" class="expertise-img">
         </div>
         <div class="expertise-content">
-          <h3 class="expertise-title">Exhibition Stands</h3>
+          <h3 class="expertise-title">Conference Planning </h3>
+          <p>Comprehensive planning, coordination, and execution of end-to-end events.</p>
         </div>
       </div>
 
@@ -99,7 +139,8 @@
           <img src="assets/img/IMG-20250703-WA0336.jpg" alt="Event Fabrication" class="expertise-img">
         </div>
         <div class="expertise-content">
-          <h3 class="expertise-title">Event Fabrication</h3>
+          <h3 class="expertise-title">Venue & Site Management</h3>
+          <p>Venue sourcing, negotiations, layout planning, and onsite operations.</p>
         </div>
       </div>
 
@@ -109,7 +150,8 @@
           <img src="assets/img/sound-lighting.jpg" alt="Sound & Lighting" class="expertise-img">
         </div>
         <div class="expertise-content">
-          <h3 class="expertise-title">Sound & Lighting</h3>
+          <h3 class="expertise-title">Event Production</h3>
+           <p>Onsite & offsite logistics, AV, lighting, staging, technical support, and video production.</p>
         </div>
       </div>
 
@@ -119,7 +161,8 @@
           <img src="assets/img/stage-design.jpg" alt="Stage Design" class="expertise-img">
         </div>
         <div class="expertise-content">
-          <h3 class="expertise-title">Stage Design</h3>
+          <h3 class="expertise-title">Event Design & Branding</h3>
+          <p>Event themes, brand storytelling, stage & stand design, printing, signage, and visual experiences.</p>
         </div>
       </div>
 
@@ -129,7 +172,30 @@
           <img src="assets/img/decor-theming.jpg" alt="Décor & Theming" class="expertise-img">
         </div>
         <div class="expertise-content">
-          <h3 class="expertise-title">Décor & Theming</h3>
+          <h3 class="expertise-title">Attendee Experience Management</h3>
+          <p>Registration, guest relations, communications, and hospitality.</p>
+        </div>
+      </div>
+
+      <!-- Logistics & Equipment Rental -->
+      <div class="expertise-card">
+        <div class="expertise-image">
+          <img src="assets/img/logistics.jpg" alt="Logistics & Equipment Rental" class="expertise-img">
+        </div>
+        <div class="expertise-content">
+          <h3 class="expertise-title">Entertainment & Corporate Gifting</h3>
+            <p>Talent booking, entertainment, branded swag, and gifting solutions.</p>
+        </div>
+      </div>
+
+      <!-- Event Branding -->
+      <div class="expertise-card">
+        <div class="expertise-image">
+          <img src="assets/img/event-branding.jpg" alt="Event Branding" class="expertise-img">
+        </div>
+        <div class="expertise-content">
+          <h3 class="expertise-title">Food & Beverage Experiences</h3>
+          <p>Curated catering, bar services, and themed culinary setups tailored for each event.</p>
         </div>
       </div>
     </div>
@@ -137,80 +203,9 @@
 </section>
 
 
-<!-- Why Choose SilverKerry Section -->     
-    <section class="why-choose" id="about">         
-        <div class="why-choose-container">             
-            <div class="why-choose-content">                 
-                
-                <!-- Left Column: Text -->
-                <div class="why-choose-text">                     
-                    <h2 class="why-choose-title">Why Choose <span>SilverKerry</span>?</h2>                     
-                    <p class="why-choose-intro">                         
-                        With over a decade of experience in the East African market, we understand the unique cultural nuances                          
-                        and business requirements that make events truly successful in our region.
-                    </p>                                          
-                    
-                    <ul class="why-choose-features">                         
-                        <li class="feature-item">                             
-                            <div class="feature-icon">
-                                <i class="fas fa-trophy"></i>
-                            </div>                             
-                            <div class="feature-content">                                 
-                                <h4>Local Expertise, Global Standards</h4>                                 
-                                <p>Deep understanding of East African markets combined with international quality delivery.</p>                             
-                            </div>                         
-                        </li>                                                  
-                        
-                        <li class="feature-item">                             
-                            <div class="feature-icon">
-                                <i class="fas fa-bullseye"></i>
-                            </div>                             
-                            <div class="feature-content">                                 
-                                <h4>End-to-End Solutions</h4>                                 
-                                <p>From concept design to post-event analysis, we handle every aspect of your event seamlessly.</p>                             
-                            </div>                         
-                        </li>                                                  
-                        
-                        <li class="feature-item">                             
-                            <div class="feature-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>                             
-                            <div class="feature-content">                                 
-                                <h4>Proven Track Record</h4>                                 
-                                <p>500+ successful events for leading corporations across East Africa with 98% client satisfaction.</p>                             
-                            </div>                         
-                        </li>                                                  
-                        
-                        <li class="feature-item">                             
-                            <div class="feature-icon">
-                                <i class="fas fa-palette"></i>
-                            </div>                             
-                            <div class="feature-content">                                 
-                                <h4>Custom Fabrication</h4>                                 
-                                <p>In-house fabrication capabilities for unique, branded event installations and experiences.</p>                             
-                            </div>                         
-                        </li>                     
-                    </ul>                 
-                </div>                                  
-                
-                <!-- Right Column: Image -->
-                <div class="why-choose-image">                     
-                    <img src="assets/img/A-8.jpg" alt="Our Team or Event Setup" class="team-image">
-                    
-                    <div class="stats-overlay">                         
-                        <span class="stat-number">98%</span>                         
-                        <span class="stat-label">Client Satisfaction</span>                     
-                    </div>                 
-                </div>             
-            </div>         
-        </div>     
-    </section>
+
 <section class="our-clients">
   <div class="section-title">Our <span>Clients</span></div>
-  <p class="section-description">
-    Trusted by leading organizations across East Africa to deliver exceptional event experiences.
-  </p>
-
   <div class="clients-grid">
     <div class="client-logo">
       <img src="assets/img/2. APHRC Vertical Logo (Black Text) (1).png" alt="APHRC Logo">
@@ -236,16 +231,43 @@
     <div class="client-logo">
       <img src="assets/img/UN Women Logo.png" alt="Equity Bank Logo">
     </div>
+    <div class="client-logo">
+    <img src="assets/img/1.avif" alt="FAWAG Logo">
+</div>
+
+<div class="client-logo">
+    <img src="assets/img/finas.webp" alt="Finas Africa Logo">
+</div>
+
+<div class="client-logo">
+    <img src="assets/img/medic-removebg-preview.png" alt="Skills M-Education Logo">
+</div>
+
+<div class="client-logo">
+    <img src="assets/img/sh_at_20_logo.png" alt="Superior Homes Logo">
+</div>
+
+<div class="client-logo">
+    <img src="assets/img/ACS-Horizontal-Logo.png" alt="Africa Climate Summit Logo">
+</div>
+
+<div class="client-logo">
+    <img src="assets/img/gok-logo.png" alt="Government of Kenya Logo">
+</div>
+
+<div class="client-logo">
+    <img src="assets/img/weblogo.webp" alt="The Edge Logo">
+</div>
+
+    
   </div>
 </section>
 
 
     <!-- Testimonials Section -->
 <section class="testimonials">
-    <div class="section-title">Our <span>Testimonials</span></div>
-    <p class="section-description">
-        Don't just take our word for it. Here's what leading companies across East Africa say about our services.
-    </p>
+    <div class="section-title"><span>Testimonials</span></div>
+    
 
     <div class="testimonial-grid">
         <div class="testimonial">
@@ -328,8 +350,7 @@
     });
 </script>
 
-    <!-- Footer -->
- <!-- Footer -->
+<!-- Footer -->
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-content">
@@ -338,11 +359,12 @@
       <div class="footer-brand">
         <img src="assets/img/Logo Design for SylverKerry Images.png" alt="Sylver Kerry Logo">
         <div class="social-links">
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Twitter">t</a>
-          <a href="#" aria-label="Instagram">i</a>
-          <a href="#" aria-label="LinkedIn">in</a>
-        </div>
+  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+  <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+</div>
+
       </div>
 
       <!-- Services -->
@@ -376,7 +398,7 @@
           <li>Nairobi, Kenya</li>
           <li>+254 704 405 018</li>
           <li>info@sylverkerry.com</li>
-          <li>Mon-Fri: 8AM–6PM</li>
+          <li>Mon–Fri: 8AM–6PM</li>
         </ul>
       </div>
     </div>
@@ -386,6 +408,7 @@
     </div>
   </div>
 </footer>
+
 
     <script>
         // Header scroll effect

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Sylver Kerry Images</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <!-- Link to external CSS file -->
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
@@ -24,50 +27,30 @@
         }
 
 
-        /* Hero Section */
-.hero-section {
+/* Portfolio Hero Section */
+#portfolio-hero.hero-section {
     background: 
-        linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%), /* More transparent gradient */
+        linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%),
         url('assets/img/IMG-20250703-WA0337.jpg') center/cover no-repeat;
     color: white;
-    padding: 8rem 0; /* Increased vertical padding to push content down */
+    padding: 8rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
-    min-height: 60vh;
+    min-height: 80vh; /* ⬅️ Increased to match services section */
 }
 
-.hero-section::before {
+#portfolio-hero.hero-section::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.2); /* Lighter overlay for better background visibility */
+    background: rgba(0, 0, 0, 0.2);
     z-index: 0;
 }
 
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    position: relative;
-    z-index: 1;
-    padding-top: 4rem; /* Moves content further down */
-}
-
-.hero-title {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.hero-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
 .performance-stats {
     background: white;
     padding: 3rem 0;
@@ -234,12 +217,31 @@
             padding: 0 2rem;
         }
 
+        .experience-section .section-title {
+    color: #1F75FE;
+}
+
+
         .events-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 per row */
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+/* Medium devices (2 per row) */
+@media (max-width: 991px) {
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small devices (1 per row) */
+@media (max-width: 576px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
         .event-card {
             background: white;
@@ -366,15 +368,11 @@
     </header>
 
     <main class="main-content">
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1 class="hero-title">Our Portfolio</h1>
-                <p class="hero-subtitle">
-                    Showcasing our exceptional work across corporate events, exhibitions, 
-                    government functions, and high-level conferences throughout East Africa and beyond.
-                </p>
-            </div>
-        </section>
+        <!-- Portfolio Hero Section -->
+<section id="portfolio-hero" class="hero-section">
+    <!-- No text inside -->
+</section>
+
 
         <section class="performance-stats">
   <div class="performance-stats-container">
@@ -396,53 +394,7 @@
     </div>
   </div>
 </section>
-
-        <section class="portfolio-section">
-            <div class="portfolio-container">
-                <h2 class="section-title">Our Clients & Partners</h2>
-                <p class="section-subtitle">
-                    We're proud to work with leading organizations across various industries, 
-                    delivering world-class events that exceed expectations.
-                </p>
-
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="portfolio">Portfolio</button>
-                    <button class="filter-btn" data-filter="venue-partner">Venue Partner</button>
-                </div>
-
-                <div class="clients-grid" id="clientsGrid">
-                    <div class="client-logo" data-category="portfolio">
-                        <img src="assets/img/1.avif" alt="FAWAG Logo">
-                    </div>
-
-                    <div class="client-logo" data-category="portfolio">
-                        <img src="assets/img/finas.webp" alt="Finas Africa Logo">
-                    </div>
-
-                    <div class="client-logo" data-category="portfolio">
-                        <img src="assets/img/medic-removebg-preview.png" alt="Skills M-Education Logo">
-                    </div>
-
-                    <div class="client-logo" data-category="portfolio">
-                        <img src="assets/img/sh_at_20_logo.png" alt="Superior Homes Logo">
-                    </div>
-
-                    <div class="client-logo" data-category="portfolio">
-                        <img src="assets/img/ACS-Horizontal-Logo.png" alt="Africa Climate Summit Logo">
-                    </div>
-
-                    <div class="client-logo" data-category="portfolio">
-                        <img src="assets/img/gok-logo.png" alt="Government of Kenya Logo">
-                    </div>
-
-                    <div class="client-logo" data-category="venue-partner">
-                        <img src="assets/img/weblogo.webp" alt="The Edge Logo">
-                    </div>
-                </div>
-            </div>
-        </section>
-         <!-- Our Previous Experience Section -->
+        <!-- Our Previous Experience Section -->
         <section class="experience-section">
             <div class="experience-container">
                 <h2 class="section-title">Our Previous Experience</h2>
@@ -721,6 +673,67 @@ document.querySelectorAll('.event-slideshow').forEach(slideshow => {
 });
 </script>
 
+
+<section class="our-clients">
+  <div class="section-title">Our <span>Clients</span></div>
+  <div class="clients-grid">
+    <div class="client-logo">
+      <img src="assets/img/2. APHRC Vertical Logo (Black Text) (1).png" alt="APHRC Logo">
+    </div>
+    <div class="client-logo">
+      <img src="assets/img/Climate Envoy Logo (1).png" alt="Meduskills Logo">
+    </div>
+    <div class="client-logo">
+      <img src="assets/img/CLIMATE_Center_subline_rgb (1).jpg" alt="UN Women Logo">
+    </div>
+    <div class="client-logo">
+      <img src="assets/img/CRK Logo.png" alt="Safaricom Logo">
+    </div>
+    <div class="client-logo">
+      <img src="assets/img/download.jpeg" alt="Kenya Airways Logo">
+    </div>
+    <div class="client-logo">
+      <img src="assets/img/Impact Expo 2.png" alt="Equity Bank Logo">
+    </div>
+    <div class="client-logo">
+      <img src="assets/img/Intercruise & Tours Logo.png" alt="Kenya Airways Logo">
+    </div>
+    <div class="client-logo">
+      <img src="assets/img/UN Women Logo.png" alt="Equity Bank Logo">
+    </div>
+    <div class="client-logo">
+    <img src="assets/img/1.avif" alt="FAWAG Logo">
+</div>
+
+<div class="client-logo">
+    <img src="assets/img/finas.webp" alt="Finas Africa Logo">
+</div>
+
+<div class="client-logo">
+    <img src="assets/img/medic-removebg-preview.png" alt="Skills M-Education Logo">
+</div>
+
+<div class="client-logo">
+    <img src="assets/img/sh_at_20_logo.png" alt="Superior Homes Logo">
+</div>
+
+<div class="client-logo">
+    <img src="assets/img/ACS-Horizontal-Logo.png" alt="Africa Climate Summit Logo">
+</div>
+
+<div class="client-logo">
+    <img src="assets/img/gok-logo.png" alt="Government of Kenya Logo">
+</div>
+
+<div class="client-logo">
+    <img src="assets/img/weblogo.webp" alt="The Edge Logo">
+</div>
+
+    
+  </div>
+</section>
+
+ 
     </main>
     
     <!-- Floating Action Buttons -->
@@ -768,11 +781,12 @@ document.querySelectorAll('.event-slideshow').forEach(slideshow => {
       <div class="footer-brand">
         <img src="assets/img/Logo Design for SylverKerry Images.png" alt="Sylver Kerry Logo">
         <div class="social-links">
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Twitter">t</a>
-          <a href="#" aria-label="Instagram">i</a>
-          <a href="#" aria-label="LinkedIn">in</a>
-        </div>
+  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+  <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+</div>
+
       </div>
 
       <!-- Services -->
@@ -806,7 +820,7 @@ document.querySelectorAll('.event-slideshow').forEach(slideshow => {
           <li>Nairobi, Kenya</li>
           <li>+254 704 405 018</li>
           <li>info@sylverkerry.com</li>
-          <li>Mon-Fri: 8AM–6PM</li>
+          <li>Mon–Fri: 8AM–6PM</li>
         </ul>
       </div>
     </div>
@@ -816,6 +830,7 @@ document.querySelectorAll('.event-slideshow').forEach(slideshow => {
     </div>
   </div>
 </footer>
+
 
     <script>
         // Portfolio Filter Functionality

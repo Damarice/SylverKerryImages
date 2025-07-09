@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services - Sylver Kerry Images</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <!-- Link to external CSS file -->
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
@@ -22,59 +25,28 @@
             color: #333;
             overflow-x: hidden;
         }
-
-    /* Hero Section */
-.hero {
-    background: url('assets/img/A-109.jpg') center center / cover no-repeat;
-    min-height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    z-index: 0;
+/* === Services Hero Section (Static, Unique) === */
+#services-hero-section.hero-static {
+  background: url('assets/img/A-109.jpg') center center / cover no-repeat;
+  min-height: 80vh; /* Doubled from 40vh to 80vh */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
 }
 
-/* Optional: Add a translucent overlay */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* Darkens background slightly */
-    z-index: -1;
+/* Optional dark overlay */
+#services-hero-section.hero-static::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
 }
 
-/* Floating animation (if used for elements) */
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    position: relative;
-    z-index: 1;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-.hero p {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
 
 /* Services Overview */
 .services-overview {
@@ -397,108 +369,177 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Our Services</h1>
-            <p>Comprehensive event management solutions tailored to exceed your expectations</p>
-        </div>
-    </section>
+  <section id="services-hero-section" class="hero-static">
+  <!-- No slideshow logic or content here -->
+</section>
+
 
 <!-- Services Overview Section -->
 <section class="services-overview">
   <div class="container">
     <div class="section-title">
-      <h2>Complete Event Solutions</h2>
-      <p>From intimate gatherings to large-scale international events, we deliver exceptional experiences</p>
+      <h2>Our Services</h2>
     </div>
 
     <div class="services-grid">
+      <!-- Custom Stand Fabrication -->
       <div class="service-card">
         <div class="service-image">
-          <img src="assets/img/DSC_4307.JPG" alt="Product Launch">
+          <img src="assets/img/A-49 (1).jpg" alt="Custom Stand Fabrication">
         </div>
-        <h3>Product Launches</h3>
-        <p>Make a memorable impact with strategic planning, creative design, and flawless execution for your product launches.</p>
+        <h3>Custom Stand Fabrication</h3>
+        <p>
+          At Sylverkerry Images, we specialize in custom stand fabrication that transforms your brand into a powerful, physical experience. From exhibition booths and trade show stands to event structures, we design, build, and deliver high-quality, innovative stands that capture attention and drive engagement. Our in-house team manages everything from concept design to installation, ensuring your brand stands out at every event.
+        </p>
         <ul class="service-features">
-          <li>Strategic event planning</li>
-          <li>Creative concept development</li>
-          <li>Media coordination</li>
-          <li>Buzz-worthy execution</li>
+          <li>Exhibition booths</li>
+          <li>Trade show stands</li>
+          <li>Event structures</li>
+          <li>Concept to installation</li>
         </ul>
         <a href="#" class="service-link">Learn More →</a>
       </div>
 
+      <!-- Event Management -->
       <div class="service-card">
         <div class="service-image">
-          <img src="assets/img/DSC_4400.JPG" alt="Conference">
+          <img src="assets/img/DSC_4400.JPG" alt="Event Management">
         </div>
-        <h3>Conferences</h3>
-        <p>Comprehensive conference management including venue selection, agenda development, and speaker coordination.</p>
+        <h3>Event Management</h3>
+        <p>
+          From idea to execution, we provide end-to-end event management services. Our team handles planning, logistics, and coordination with precision, ensuring your event runs seamlessly. Whether it’s a corporate function or a multi-day conference, we manage all elements to deliver exceptional results.
+        </p>
         <ul class="service-features">
-          <li>Venue selection & setup</li>
-          <li>Agenda development</li>
-          <li>Speaker coordination</li>
-          <li>Attendee registration</li>
+          <li>Event planning & strategy</li>
+          <li>Logistics & operations</li>
+          <li>End-to-end coordination</li>
+          <li>Execution & supervision</li>
         </ul>
         <a href="#" class="service-link">Learn More →</a>
       </div>
 
+      <!-- Conference Planning -->
       <div class="service-card">
         <div class="service-image">
-          <img src="assets/img/IMG-20241017-WA0341.jpg" alt="Government Event">
+          <img src="assets/img/DSC_4259.JPG" alt="Conference Planning">
         </div>
-        <h3>Government Events</h3>
-        <p>Extensive experience in planning official ceremonies, diplomatic receptions, and public forums.</p>
+        <h3>Conference Planning</h3>
+        <p>
+          We plan and execute impactful conferences by curating content, securing speakers, managing venues, and coordinating attendees. From technical setups to hospitality, our experienced team ensures a seamless experience that meets your business goals.
+        </p>
         <ul class="service-features">
-          <li>Official ceremonies</li>
-          <li>Diplomatic receptions</li>
-          <li>Public forums</li>
-          <li>Security coordination</li>
+          <li>Speaker sourcing & coordination</li>
+          <li>Program development</li>
+          <li>AV & technical management</li>
+          <li>Onsite logistics</li>
         </ul>
         <a href="#" class="service-link">Learn More →</a>
       </div>
 
+      <!-- Venue & Site Management -->
       <div class="service-card">
         <div class="service-image">
-          <img src="assets/img/DSC_4259.JPG" alt="Plenary">
+          <img src="assets/img/IMG-20250703-WA0337.jpg" alt="Venue Management">
         </div>
-        <h3>High-Level Plenaries</h3>
-        <p>Proven track record organizing diplomatic events and formal large-scale gatherings with complex protocols.</p>
+        <h3>Venue & Site Management</h3>
+        <p>
+          We identify, negotiate, and prepare venues tailored to your event’s requirements. From layout design to operational readiness, our venue team ensures each location is optimized for guest comfort, brand alignment, and seamless flow.
+        </p>
         <ul class="service-features">
-          <li>Diplomatic protocols</li>
-          <li>VIP management</li>
-          <li>Security coordination</li>
-          <li>International standards</li>
+          <li>Venue sourcing & booking</li>
+          <li>Layout planning</li>
+          <li>Permits & compliance</li>
+          <li>Onsite coordination</li>
         </ul>
         <a href="#" class="service-link">Learn More →</a>
       </div>
 
+      <!-- Event Production -->
       <div class="service-card">
         <div class="service-image">
-          <img src="assets/img/IMG-20250703-WA0337.jpg" alt="Exhibition">
+          <img src="assets/img/DSC_4307.JPG" alt="Event Production">
         </div>
-        <h3>Exhibitions</h3>
-        <p>Planning and executing exhibitions and trade shows that engage, inspire, and captivate audiences.</p>
+        <h3>Event Production</h3>
+        <p>
+          We manage all production elements — from staging, lighting, and AV to multimedia and crew logistics. Whether on-site or offsite, our production ensures every detail contributes to an immersive and memorable event.
+        </p>
         <ul class="service-features">
-          <li>Exhibition planning</li>
-          <li>Trade show management</li>
-          <li>Booth coordination</li>
-          <li>Visitor engagement</li>
+          <li>AV & lighting systems</li>
+          <li>Stage design & rigging</li>
+          <li>Multimedia & video</li>
+          <li>Production crew coordination</li>
         </ul>
         <a href="#" class="service-link">Learn More →</a>
       </div>
 
+      <!-- Event Design & Branding -->
       <div class="service-card">
         <div class="service-image">
-          <img src="assets/img/A-49 (1).jpg" alt="Exhibition Stand">
+          <img src="assets/img/IMG-20241017-WA0341.jpg" alt="Event Design & Branding">
         </div>
-        <h3>Exhibition Design & Stands</h3>
-        <p>We build custom stands and run full-service corporate events that make brands unforgettable.</p>
+        <h3>Event Design & Branding</h3>
+        <p>
+          We bring brands to life through immersive designs and storytelling. Our services include visual concepts, stage design, signage, and fully branded experiences to ensure every touchpoint reflects your identity.
+        </p>
         <ul class="service-features">
-          <li>Custom stand design</li>
-          <li>Fabrication services</li>
-          <li>Installation & setup</li>
-          <li>Brand integration</li>
+          <li>Theme creation</li>
+          <li>Stage & booth design</li>
+          <li>Signage & print materials</li>
+          <li>Visual storytelling</li>
+        </ul>
+        <a href="#" class="service-link">Learn More →</a>
+      </div>
+
+      <!-- Attendee Experience Management -->
+      <div class="service-card">
+        <div class="service-image">
+          <img src="assets/img/DSC_4400.JPG" alt="Attendee Experience">
+        </div>
+        <h3>Attendee Experience Management</h3>
+        <p>
+          We ensure every guest feels engaged and well-catered through streamlined registration, responsive communication, and personalized support. Your attendees will leave feeling valued and impressed.
+        </p>
+        <ul class="service-features">
+          <li>Online/offline registration</li>
+          <li>Guest communication</li>
+          <li>Hospitality & care</li>
+          <li>On-site support</li>
+        </ul>
+        <a href="#" class="service-link">Learn More →</a>
+      </div>
+
+      <!-- Entertainment & Corporate Gifting -->
+      <div class="service-card">
+        <div class="service-image">
+          <img src="assets/img/DSC_4259.JPG" alt="Entertainment & Gifting">
+        </div>
+        <h3>Entertainment & Corporate Gifting</h3>
+        <p>
+          Enhance your events with curated entertainment and branded gifting. We source talent and deliver unique gift solutions that build lasting impressions and emotional connections.
+        </p>
+        <ul class="service-features">
+          <li>Talent sourcing</li>
+          <li>Live performances</li>
+          <li>Custom gifts & branding</li>
+          <li>Memorable experiences</li>
+        </ul>
+        <a href="#" class="service-link">Learn More →</a>
+      </div>
+
+      <!-- Food & Beverage Experiences -->
+      <div class="service-card">
+        <div class="service-image">
+          <img src="assets/img/IMG-20250703-WA0337.jpg" alt="Food & Beverage">
+        </div>
+        <h3>Food & Beverage Experiences</h3>
+        <p>
+          We collaborate with top culinary teams to provide tailored catering, bar services, and themed setups that enhance your event atmosphere and guest satisfaction.
+        </p>
+        <ul class="service-features">
+          <li>Catering & menu design</li>
+          <li>Bar services</li>
+          <li>Themed dining experiences</li>
+          <li>Professional service staff</li>
         </ul>
         <a href="#" class="service-link">Learn More →</a>
       </div>
@@ -626,11 +667,12 @@
       <div class="footer-brand">
         <img src="assets/img/Logo Design for SylverKerry Images.png" alt="Sylver Kerry Logo">
         <div class="social-links">
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Twitter">t</a>
-          <a href="#" aria-label="Instagram">i</a>
-          <a href="#" aria-label="LinkedIn">in</a>
-        </div>
+  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+  <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+</div>
+
       </div>
 
       <!-- Services -->
@@ -664,7 +706,7 @@
           <li>Nairobi, Kenya</li>
           <li>+254 704 405 018</li>
           <li>info@sylverkerry.com</li>
-          <li>Mon-Fri: 8AM–6PM</li>
+          <li>Mon–Fri: 8AM–6PM</li>
         </ul>
       </div>
     </div>
@@ -674,6 +716,7 @@
     </div>
   </div>
 </footer>
+
         <script>
         // Header scroll effect
         window.addEventListener('scroll', function() {

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Sylver Kerry Images</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <!-- Link to external CSS file -->
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
@@ -23,6 +26,48 @@
             background: white;
             min-height: 100vh;
         }
+        /* New Hero Image-Only Section */
+.contact-hero-image-only {
+  background: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80')
+    center/cover no-repeat;
+  height: 80vh; /* Reduced height */
+  position: relative;
+  opacity: 1;
+  z-index: 0;
+}
+
+/* Contact Details Section */
+.contact-details-section {
+  background: #fff;
+  padding: 4rem 0;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Contact Header Moved Below */
+.contact-page-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  color: #333;
+  padding: 2rem;
+}
+
+.contact-page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #1c99ed, #1c99ed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-page-header p {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 
 /* Contact Page Hero Section Styles */
 .contact-hero-section {
@@ -159,6 +204,14 @@
     border: none;
     border-radius: 15px;
 }
+/* Contact Details Section */
+.contact-details-section {
+  background: #fff;
+  padding: 4rem 0;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 
 .contact-map-section {
     background: #f8f9fa;
@@ -243,66 +296,73 @@
     </div>
 </header>
 
-<!-- Hero Section -->
-<section class="contact-hero-section">
-    <div class="contact-main-container">
-        <!-- Contact Header with Background -->
-        <div class="contact-page-header">
-            <h1>Get In Touch</h1>
-            <p>Ready to create exceptional experiences? Let's discuss your next event and bring your vision to life with our expert event management services.</p>
-        </div>
+<!-- Contact Hero Image Only -->
+<section class="contact-hero-image-only"></section>
 
-        <!-- Contact Content -->
-        <div class="contact-main-content">
-            <!-- Contact Information -->
-            <div class="contact-info-card">
-                <h2>Contact Information</h2>
-                
-                <div class="contact-info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <h3>Address</h3>
-                        <p>Rehema House, 5th Floor<br>Nairobi, Kenya</p>
-                    </div>
-                </div>
-
-                <div class="contact-info-item">
-                    <i class="fas fa-phone"></i>
-                    <div>
-                        <h3>Phone</h3>
-                        <p>0704405018<br>+254 755 599 904</p>
-                    </div>
-                </div>
-
-                <div class="contact-info-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h3>Email</h3>
-                        <p>info@sylverkerry.com</p>
-                    </div>
-                </div>
-
-                <div class="contact-info-item">
-                    <i class="fas fa-clock"></i>
-                    <div>
-                        <h3>Business Hours</h3>
-                        <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Weekend: By Appointment</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Embedded Form -->
-            <div class="contact-form-card">
-                <h2>Send Us a Message</h2>
-                <iframe src="https://us.bigin.online/org886997716/forms/contact-form"
-                        frameborder="0"
-                        scrolling="auto"
-                        allowfullscreen>
-                </iframe>
-            </div>
-        </div>
+<!-- Contact Details Section with Text and Form -->
+<section class="contact-details-section">
+  <div class="contact-main-container">
+    <!-- Moved text here -->
+    <div class="contact-page-header">
+      <h1>Get In Touch</h1>
+      <p>
+        Ready to create exceptional experiences? Let's discuss your next event
+        and bring your vision to life with our expert event management services.
+      </p>
     </div>
+
+    <div class="contact-main-content">
+      <!-- Contact Information -->
+      <div class="contact-info-card">
+        <h2>Contact Information</h2>
+        <!-- Address, Phone, Email, Hours... -->
+        <div class="contact-info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h3>Address</h3>
+            <p>Rehema House, 5th Floor<br />Nairobi, Kenya</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <i class="fas fa-phone"></i>
+          <div>
+            <h3>Phone</h3>
+            <p>0704405018<br />+254 755 599 904</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h3>Email</h3>
+            <p>info@sylverkerry.com</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <i class="fas fa-clock"></i>
+          <div>
+            <h3>Business Hours</h3>
+            <p>Monday - Friday: 8:00 AM - 6:00 PM<br />Weekend: By Appointment</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-card">
+        <h2>Send Us a Message</h2>
+        <iframe
+          src="https://us.bigin.online/org886997716/forms/contact-form"
+          frameborder="0"
+          scrolling="auto"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
 </section>
+
 
 <!-- Map Section - Full Width -->
 <div class="contact-map-section">
@@ -359,11 +419,12 @@
       <div class="footer-brand">
         <img src="assets/img/Logo Design for SylverKerry Images.png" alt="Sylver Kerry Logo">
         <div class="social-links">
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Twitter">t</a>
-          <a href="#" aria-label="Instagram">i</a>
-          <a href="#" aria-label="LinkedIn">in</a>
-        </div>
+  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+  <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+</div>
+
       </div>
 
       <!-- Services -->
@@ -397,7 +458,7 @@
           <li>Nairobi, Kenya</li>
           <li>+254 704 405 018</li>
           <li>info@sylverkerry.com</li>
-          <li>Mon-Fri: 8AM–6PM</li>
+          <li>Mon–Fri: 8AM–6PM</li>
         </ul>
       </div>
     </div>
@@ -407,6 +468,7 @@
     </div>
   </div>
 </footer>
+
 
     <script>
         // Form submission handler
