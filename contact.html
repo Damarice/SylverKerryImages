@@ -295,6 +295,18 @@
         <a href="#quote" class="cta-button">Get Quote</a>
     </div>
 </header>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+      // Only add lazy loading if not already set
+      if (!img.hasAttribute('loading')) {
+        img.setAttribute('loading', 'lazy');
+      }
+    });
+  });
+</script>
+
 
 <!-- Contact Hero Image Only -->
 <section class="contact-hero-image-only"></section>

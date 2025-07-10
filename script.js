@@ -1,39 +1,45 @@
-// Ensure all DOM elements are loaded before running scripts
+// Fixed Mobile Menu Toggle - Updated to match your HTML structure
 document.addEventListener('DOMContentLoaded', function() {
 
     // --- Mobile Menu Toggle Functionality ---
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
-    const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelectorAll('.nav-menu a');
 
-    // Only set up menu functionality if all elements are found
-    if (mobileMenuToggle && navMenu && hamburger && navLinks.length > 0) {
+    // Updated condition - removed hamburger requirement since you don't have that element
+    if (mobileMenuToggle && navMenu) {
+        console.log('Mobile menu elements found, setting up functionality...');
+        
         // Toggle mobile menu
         mobileMenuToggle.addEventListener('click', function() {
+            console.log('Mobile menu toggle clicked!');
+            
             navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active'); // Add active class to button instead
 
             // Prevent body scroll when menu is open
             document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            
+            console.log('Menu is now:', navMenu.classList.contains('active') ? 'OPEN' : 'CLOSED');
         });
 
-        // Close menu when clicking on nav links
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('active');
-                document.body.style.overflow = '';
+        // Close menu when clicking on nav links (if they exist)
+        if (navLinks.length > 0) {
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
             });
-        });
+        }
 
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
-            // Check if the click target is outside both the toggle button and the menu itself
             if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
-                if (navMenu.classList.contains('active')) { // Only close if it's open
+                if (navMenu.classList.contains('active')) {
                     navMenu.classList.remove('active');
-                    hamburger.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
                     document.body.style.overflow = '';
                 }
             }
@@ -41,20 +47,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Handle window resize
         window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) { // Assuming 768px is your breakpoint for mobile menu
-                if (navMenu.classList.contains('active')) { // Only remove if active
+            if (window.innerWidth > 768) {
+                if (navMenu.classList.contains('active')) {
                     navMenu.classList.remove('active');
-                    hamburger.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
                     document.body.style.overflow = '';
                 }
             }
         });
+    } else {
+        console.error('Mobile menu elements not found!');
+        console.log('Toggle button found:', !!mobileMenuToggle);
+        console.log('Nav menu found:', !!navMenu);
     }
 
     // --- Header scroll effect ---
     window.addEventListener('scroll', function() {
         const header = document.querySelector('.header');
-        if (header) { // Ensure header exists
+        if (header) {
             if (window.scrollY > 100) {
                 header.classList.add('scrolled');
             } else {
@@ -62,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-
 
     // --- Hero Background Slideshow ---
     const hero = document.querySelector('.hero');
@@ -74,27 +83,24 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
     let currentIndex = 0;
 
-    // Only run hero slideshow if the .hero element exists
     if (hero) {
         function changeBackground() {
             hero.style.backgroundImage = `url(${images[currentIndex]})`;
             currentIndex = (currentIndex + 1) % images.length;
         }
 
-        changeBackground(); // Set initial image immediately
-        setInterval(changeBackground, 5000); // Change every 5 seconds
+        changeBackground();
+        setInterval(changeBackground, 5000);
     }
 
-    // --- Custom Stand Fabrication Slideshow (for #fabricationSlideshow) ---
-    // This is the code for the slideshow we discussed in previous interactions.
-    // It is separate and specific to its own container.
+    // --- Custom Stand Fabrication Slideshow ---
     const fabricationSlideshowContainer = document.getElementById('fabricationSlideshow');
 
     if (fabricationSlideshowContainer) {
         let slideIndex = 0;
         let slides = fabricationSlideshowContainer.getElementsByClassName("slide");
 
-        function showFabricationSlides() { // Renamed function to avoid conflict
+        function showFabricationSlides() {
             for (let i = 0; i < slides.length; i++) {
                 slides[i].classList.remove('active');
             }
@@ -103,9 +109,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 slideIndex = 1;
             }
             slides[slideIndex - 1].classList.add('active');
-            setTimeout(showFabricationSlides, 3000); // Change every 3 seconds
+            setTimeout(showFabricationSlides, 3000);
         }
 
-        showFabricationSlides(); // Start the fabrication slideshow
+        showFabricationSlides();
     }
 });
