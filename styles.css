@@ -1457,16 +1457,26 @@ section, header, footer {
 }
 
 
-/* Experience Section */
+/* === Experience Section (Full Screen, Full Width) === */
 .experience-section {
-    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
     background: white;
+    padding: 2rem 0;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .experience-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    width: 100%;
+    padding: 0; /* Remove side padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 .experience-section .section-title {
@@ -1478,50 +1488,56 @@ section, header, footer {
 
 .events-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 per row on desktop */
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     margin-top: 3rem;
+    align-content: center;
+    flex-grow: 1;
+    padding: 0; /* Ensure no extra padding */
+    width: 100%;
 }
 
-/* Large tablets (3 per row) */
+/* Responsive Layout */
 @media (max-width: 1200px) {
     .events-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
     }
 }
 
-/* Medium tablets (2 per row) */
 @media (max-width: 900px) {
     .events-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
     }
 }
 
-/* Small tablets and mobile (1 per row) */
 @media (max-width: 768px) {
+    .experience-section {
+        padding: 1rem 0;
+    }
+
     .events-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+        margin-top: 2rem;
     }
-    
+
     .experience-container {
-        padding: 0 1rem;
+        padding: 0;
     }
-    
+
     .experience-section .section-title {
         font-size: 2rem;
     }
 }
 
+/* Event Card */
 .event-card {
     background: white;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: fit-content;
+    max-height: 70vh;
 }
 
 .event-card:hover {
@@ -1529,10 +1545,17 @@ section, header, footer {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
+/* Slideshow */
 .event-slideshow {
     position: relative;
     height: 300px;
     overflow: hidden;
+}
+
+@media (min-height: 800px) {
+    .event-slideshow {
+        height: 350px;
+    }
 }
 
 .event-slide {
@@ -1555,6 +1578,7 @@ section, header, footer {
     object-fit: cover;
 }
 
+/* Controls */
 .slideshow-controls {
     position: absolute;
     bottom: 15px;
@@ -1592,9 +1616,9 @@ section, header, footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.3s ease;
     z-index: 10;
     font-size: 18px;
+    transition: background 0.3s ease;
 }
 
 .slideshow-nav:hover {
@@ -1609,6 +1633,7 @@ section, header, footer {
     right: 15px;
 }
 
+/* Text */
 .event-info {
     padding: 2rem;
     text-align: center;
@@ -1622,32 +1647,44 @@ section, header, footer {
     line-height: 1.4;
 }
 
-/* Additional responsive improvements */
+/* Mobile Adjustments */
 @media (max-width: 480px) {
     .experience-section {
-        padding: 2rem 0;
+        padding: 1rem 0;
     }
-    
+
     .event-slideshow {
         height: 250px;
     }
-    
+
     .event-info {
         padding: 1.5rem;
     }
-    
+
     .event-name {
         font-size: 1.2rem;
     }
-    
+
     .slideshow-nav {
         width: 35px;
         height: 35px;
         font-size: 16px;
     }
-    
+
     .slide-dot {
         width: 10px;
         height: 10px;
+    }
+}
+
+/* Small screen with short height */
+@media (max-height: 600px) {
+    .experience-section {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    .events-grid {
+        align-content: start;
     }
 }
