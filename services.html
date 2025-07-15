@@ -8,18 +8,27 @@
     <!-- Font Awesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-     <!-- Critical inline CSS -->
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; }
-    header { background: #3D66C9; color: white; padding: 1rem; text-align: center; }
-  </style>
+ <!-- Critical inline CSS -->
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
 
-  <!-- Non-blocking full CSS -->
-  <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="styles.css"></noscript>
+  header {
+    background: #3D66C9;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+</style>
 
-  <!-- JS -->
-  <script src="script.js" defer></script>
+<!-- Standard blocking stylesheet load (prevents FOUC) -->
+<link rel="stylesheet" href="styles.css">
+
+<!-- JS (defer so it doesn't block rendering) -->
+<script src="script.js" defer></script>
+
 
     <style>
         * {
