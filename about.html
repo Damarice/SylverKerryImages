@@ -67,19 +67,21 @@
             color: #333;
             overflow-x: hidden;
         }
-/* Hero Section - Full Screen */
 #about-hero {
-  background: url('assets/img/About\ Us-\ Hero\ Photo.png') center center / cover no-repeat;
-  height: 80vh;
+  margin-top: 120px; /* Push below the fixed navbar */
+  height: 80vh;       /* Hero section height */
   width: 100%;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
-  z-index: 0;
-  margin: 0;
-  padding: 0;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Ensures the image fills the section without distortion */
+  display: block;
 }
 
 /* About Section - Compact */
@@ -608,10 +610,10 @@ body {
             <nav>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="portfolio.html">Our Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
             <button class="mobile-menu-toggle">☰</button>
@@ -632,9 +634,10 @@ body {
 </script>
 
 
-    <!-- Hero Section -->
-    <!-- Hero Section (About Page) -->
-<section class="about-hero" id="about-hero"></section>
+  <!-- Hero Section (About Page) -->
+<section class="about-hero" id="about-hero">
+  <img src="assets/img/About Us (Hero Section).png" alt="About Us Hero" class="hero-img">
+</section>
 
 
 <!-- About Section -->
@@ -653,7 +656,7 @@ body {
                 <p>From our base in Nairobi, we serve clients across Kenya and throughout East Africa, bringing international standards and local expertise to every project we undertake.</p>
             </div>
             <div class="about-image">
-                <img src="assets/img/A-110.jpg" alt="About Sylver Kerry Images" style="max-width: 100%; height: auto; border-radius: 8px;">
+                <img src="assets/img/Who we are photo.jpg" alt="About Sylver Kerry Images" style="max-width: 100%; height: auto; border-radius: 8px;">
             </div>
         </div>
     </div>
@@ -720,90 +723,75 @@ body {
                 <!-- Team Member 1 -->
                 <div class="team-member">
                     <div class="member-image-container">
-                        <img src="assets/img/Akoth E. A Photo.jpg" alt="Akoth - Founder" class="member-image">
+                        <img src="assets/img/Akoth E. A Photo.jpg" alt="Akoth E.A - Managing Director" class="member-image">
                     </div>
                     <div class="member-info">
-                        <h3 class="member-name">Akoth E. A</h3>
-                        <p class="member-role">Founder & CEO</p>
+                        <h3 class="member-name">Akoth E.A</h3>
+                        <p class="member-role">Managing Director</p>
                     </div>
                     <div class="hover-description">
-                        <h3>Akoth E. A</h3>
-                        <p>Akoth is the visionary behind Sylverkerry Images, bringing over a decade of hands-on expertise in events, exhibitions, and brand experiences. Her meticulous attention to detail, creative problem-solving, and commitment to client satisfaction have earned her a trusted reputation in the industry.</p>
+                        <h3>Akoth E.A</h3>
+                        <p>Akoth brings over a decade of hands-on expertise in events, exhibitions, and brand experiences. Her meticulous attention to detail, creative problem-solving, and commitment to client satisfaction have earned her a trusted reputation in the industry. Under her leadership, Sylverkerry Images continues to deliver innovative, reliable, and impactful solutions that transform ideas into unforgettable experiences.</p>
                     </div>
                 </div>
 
                 <!-- Team Member 2 -->
                 <div class="team-member">
                     <div class="member-image-container">
-                        <img src="assets/img/sarah-johnson.jpg" alt="Sarah Johnson - Creative Director" class="member-image">
+                        <img src="assets/img/Victor Aresi.png" alt="Victor Aresi - Head of Strategy & Operations" class="member-image">
                     </div>
                     <div class="member-info">
-                        <h3 class="member-name">Sarah Johnson</h3>
-                        <p class="member-role">Creative Director</p>
+                        <h3 class="member-name">Victor Aresi</h3>
+                        <p class="member-role">Head of Strategy & Operations</p>
                     </div>
                     <div class="hover-description">
-                        <h3>Sarah Johnson</h3>
-                        <p>Sarah leads our creative team with 8 years of experience in visual storytelling and brand design. Her innovative approach to exhibition design and event aesthetics has transformed countless client visions into stunning realities.</p>
+                        <h3>Victor Aresi</h3>
+                        <p>Victor is in charge of strategic leadership, drives the company's vision, and oversees all operations to ensure service excellence and business growth. Responsible for key client relationships, partnerships, and maintaining the highest standards across all projects.</p>
                     </div>
                 </div>
 
                 <!-- Team Member 3 -->
                 <div class="team-member">
                     <div class="member-image-container">
-                        <img src="assets/img/michael-chen.jpg" alt="Michael Chen - Technical Director" class="member-image">
+                        <img src="assets/img/Collins Jalang'o.png" alt="Collins Jalang'o - Sales & Business Development" class="member-image">
                     </div>
                     <div class="member-info">
-                        <h3 class="member-name">Michael Chen</h3>
-                        <p class="member-role">Technical Director</p>
+                        <h3 class="member-name">Collins Jalang'o</h3>
+                        <p class="member-role">Sales & Business Development</p>
                     </div>
                     <div class="hover-description">
-                        <h3>Michael Chen</h3>
-                        <p>Michael ensures flawless execution of all technical aspects of our events and exhibitions. With expertise in audiovisual systems, lighting design, and venue management, he guarantees seamless event delivery every time.</p>
+                        <h3>Collins Jalang'o</h3>
+                        <p>Collins drives business growth through client acquisition and strategic partnerships. He focuses on building lasting client relationships and positioning the company as a leader in events and exhibition solutions.</p>
                     </div>
                 </div>
 
                 <!-- Team Member 4 -->
                 <div class="team-member">
                     <div class="member-image-container">
-                        <img src="assets/img/emma-wilson.jpg" alt="Emma Wilson - Project Manager" class="member-image">
+                        <img src="assets/img/Hillary Andalo.png" alt="Hillary Andalo - Creative & Production" class="member-image">
                     </div>
                     <div class="member-info">
-                        <h3 class="member-name">Emma Wilson</h3>
-                        <p class="member-role">Project Manager</p>
+                        <h3 class="member-name">Hillary Andalo</h3>
+                        <p class="member-role">Creative & Production</p>
                     </div>
                     <div class="hover-description">
-                        <h3>Emma Wilson</h3>
-                        <p>Emma coordinates all project timelines and client communications with precision and care. Her organizational skills and attention to detail ensure that every event runs smoothly from conception to completion.</p>
+                        <h3>Hillary Andalo</h3>
+                        <p>Hillary leads the creative vision for events, exhibitions, and brand experiences. Oversees design, content creation, and production teams to ensure innovative, visually compelling, and brand-aligned solutions are brought to life for every project.</p>
                     </div>
                 </div>
 
                 <!-- Team Member 5 -->
                 <div class="team-member">
                     <div class="member-image-container">
-                        <img src="assets/img/david-ochieng.jpg" alt="David Ochieng - Marketing Specialist" class="member-image">
+                        <img src="assets/img/Iska Muga.png" alt="Iska Muga - Finance & Administration" class="member-image">
                     </div>
                     <div class="member-info">
-                        <h3 class="member-name">David Ochieng</h3>
-                        <p class="member-role">Marketing Specialist</p>
+                        <h3 class="member-name">Iska Muga</h3>
+                        <p class="member-role">Finance & Administration</p>
                     </div>
                     <div class="hover-description">
-                        <h3>David Ochieng</h3>
-                        <p>David develops strategic marketing campaigns that amplify our clients' brand presence. His expertise in digital marketing and brand positioning helps maximize the impact of every event and exhibition we create.</p>
-                    </div>
-                </div>
-
-                <!-- Team Member 6 -->
-                <div class="team-member">
-                    <div class="member-image-container">
-                        <img src="assets/img/grace-mwangi.jpg" alt="Grace Mwangi - Operations Manager" class="member-image">
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Grace Mwangi</h3>
-                        <p class="member-role">Operations Manager</p>
-                    </div>
-                    <div class="hover-description">
-                        <h3>Grace Mwangi</h3>
-                        <p>Grace oversees day-to-day operations and vendor relationships, ensuring quality control and cost efficiency. Her strategic approach to resource management and team coordination keeps our projects on track and within budget.</p>
+                        <h3>Iska Muga</h3>
+                        <p>Iska manages the company's financial health and administrative operations. Oversees all internal processes to ensure operational efficiency and sustainability.</p>
                     </div>
                 </div>
             </div>

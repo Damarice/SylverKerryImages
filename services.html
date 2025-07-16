@@ -67,26 +67,17 @@
             overflow-x: hidden;
         }
 /* === Services Hero Section (Full Screen) === */
-#services-hero-section.hero-static {
-  background: url('assets/img/Our\ Services\ \(Hero\ Photo\).png') center center / cover no-repeat;
-  min-height: 80vh;
+#services-hero-section {
+  margin-top: 120px;
   width: 100%;
-  position: relative;
+  max-height: 70vh;            /* ✅ Control max height of section */
   overflow: hidden;
-  z-index: 0;
-  margin: 0;
-  padding: 0;
 }
 
-#services-hero-section.hero-static::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: -1;
+.hero-img {
+  width: 100%;                 /* Let it scale to full width */
+  height: auto;                /* Maintain original aspect ratio */
+  display: block;
 }
 
 /* Services Overview - Compact */
@@ -398,10 +389,10 @@ body {
             <nav>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="portfolio.html">Our Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
             <button class="mobile-menu-toggle">☰</button>
@@ -421,9 +412,12 @@ body {
 </script>
 
 
-  <section id="services-hero-section" class="hero-static">
-  <!-- No slideshow logic or content here -->
+<section id="services-hero-section">
+  <img src="assets/img/Our Services (Hero Section).png" alt="Our Services Hero" class="hero-img">
 </section>
+
+
+
 
 
 <!-- Services Overview Section -->
@@ -490,7 +484,7 @@ body {
         <div class="service-image">
           <img src="assets/img/Venue & Site Mngmt.jpg" alt="Comprehensive Exhibition Management">
         </div>
-        <h3>Comprehensive Exhibition Management</h3>
+        <h3>Exhibition Management</h3>
         <p>
           We handle everything from venue booking to branding, safety compliance, vendor management, and floor design to create impactful exhibition experiences.
         </p>

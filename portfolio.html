@@ -71,29 +71,16 @@
 
 /* Portfolio Hero Section - Full Screen */
 #portfolio-hero.hero-section {
-    background: 
-        linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%),
-        url('assets/img/Portfolio-\ Hero\ Photo.jpg') center/cover no-repeat;
-    color: white;
-    padding: 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin-top: 120px;
+  width: 100%;
+  max-height: 70vh;            /* ✅ Control max height of section */
+  overflow: hidden;
 }
 
-#portfolio-hero.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.2);
-    z-index: 0;
+.hero-img {
+  width: 100%;                 /* Let it scale to full width */
+  height: auto;                /* Maintain original aspect ratio */
+  display: block;
 }
 
 /* Performance Stats - Compact */
@@ -429,10 +416,10 @@ html, body {
             <nav>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="portfolio.html">Our Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
             <button class="mobile-menu-toggle">☰</button>
@@ -455,8 +442,9 @@ html, body {
     <main class="main-content">
         <!-- Portfolio Hero Section -->
 <section id="portfolio-hero" class="hero-section">
-    <!-- No text inside -->
+  <img src="assets/img/Portfolio (Hero Section).png" alt="Portfolio Hero" class="hero-img">
 </section>
+
 
 
         <section class="performance-stats">
@@ -531,7 +519,7 @@ html, body {
                             </div>
                         </div>
                         <div class="event-info">
-                            <h3 class="event-name">AFRICA CLIMATE SUMMET KICC</h3>
+                            <h3 class="event-name">Africa Climate Summit- KICC</h3>
                         </div>
                     </div>
 
@@ -556,7 +544,7 @@ html, body {
                             </div>
                         </div>
                         <div class="event-info">
-                            <h3 class="event-name">Annual Data Privacy Conference 2025 -Booth Set Up</h3>
+                            <h3 class="event-name">Annual Data Privacy Conference 2025</h3>
                         </div>
                     </div>
 
@@ -581,7 +569,7 @@ html, body {
                             </div>
                         </div>
                         <div class="event-info">
-                            <h3 class="event-name">Evidence Summit-APHRC Stand</h3>
+                            <h3 class="event-name">Evidence Summit-APHRC</h3>
                         </div>
                     </div>
 
@@ -631,7 +619,7 @@ html, body {
                             </div>
                         </div>
                         <div class="event-info">
-                            <h3 class="event-name">Impact Expo 2024</h3>
+                            <h3 class="event-name">“Impact Expo- Sarit Centre</h3>
                         </div>
                     </div>
                     <!-- Event 6 -->
@@ -655,7 +643,7 @@ html, body {
                             </div>
                         </div>
                         <div class="event-info">
-                            <h3 class="event-name">Meduskills -Product Launch</h3>
+                            <h3 class="event-name">Product Launch- Skills Meducation</h3>
                         </div>
                     </div>
                     <!-- Event 6 -->
