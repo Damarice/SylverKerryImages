@@ -280,81 +280,144 @@
     opacity: 1;
 }
 
-/* Why Choose Us Section - Compact */
-.team-section {
-    padding: 40px 0;
-    background: #f8f9fa;
-    margin: 0;
-}
+ /* Team Section - 2 Per Row with Hover */
+        .team-section {
+            padding: 40px 0;
+            background: #f8f9fa;
+            margin: 0;
+        }
 
-.why-choose-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
 
-.why-choose-header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
+        .team-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
 
-.why-choose-title {
-    font-size: 2rem;
-    color: #000;
-    margin: 0;
-}
+        .team-title {
+            font-size: 2rem;
+            color: #000;
+            margin: 0;
+        }
 
-.why-choose-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-}
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-/* Image Column Styling */
-.why-choose-image {
-    flex: 1 1 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 180px;
-}
+        .team-member {
+            position: relative;
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
 
-.image-container {
-    position: relative;
-    width: 100%;
-    max-width: 300px;
-    background: #fff;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-    aspect-ratio: 1 / 1;
-}
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
 
-.static-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    border-radius: inherit;
-    display: block;
-}
+        .member-image-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
 
-/* Text Column Styling */
-.why-choose-text {
-    flex: 1 1 50%;
-}
+        .member-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.3s ease;
+        }
 
-.why-choose-intro {
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.6;
-}
+        .team-member:hover .member-image {
+            transform: scale(1.05);
+        }
 
+        .member-info {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .member-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #000;
+            margin: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Hover Description Overlay */
+        .hover-description {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            border-radius: 15px;
+        }
+
+        .team-member:hover .hover-description {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .hover-description h3 {
+            font-size: 1.3rem;
+            margin: 0 0 1rem 0;
+            color: #fff;
+        }
+
+        .hover-description p {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+            
+            .member-image-container {
+                height: 250px;
+            }
+            
+            .hover-description {
+                padding: 1.5rem;
+            }
+        }
 /* CTA Section - Compact */
 .cta-section {
     padding: 40px 0;
@@ -647,34 +710,105 @@ body {
         </div>
     </section>
 
-    <section class="team-section" id="why-choose-us">
-        <div class="why-choose-container">
-
-            <div class="why-choose-header">
-                <h2 class="why-choose-title">Why Choose Us</h2>
+   <section class="team-section" id="team">
+        <div class="team-container">
+            <div class="team-header">
+                <h2 class="team-title">Why Choose Us</h2>
             </div>
-
-            <div class="why-choose-content">
-                <div class="why-choose-image">
-                    <div class="image-container">
-                        <img src="assets/img/Akoth E. A Photo.jpg" alt="Akoth - Founder" class="static-image">
+            
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="member-image-container">
+                        <img src="assets/img/Akoth E. A Photo.jpg" alt="Akoth - Founder" class="member-image">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Akoth E. A</h3>
+                        <p class="member-role">Founder & CEO</p>
+                    </div>
+                    <div class="hover-description">
+                        <h3>Akoth E. A</h3>
+                        <p>Akoth is the visionary behind Sylverkerry Images, bringing over a decade of hands-on expertise in events, exhibitions, and brand experiences. Her meticulous attention to detail, creative problem-solving, and commitment to client satisfaction have earned her a trusted reputation in the industry.</p>
                     </div>
                 </div>
 
-                <div class="why-choose-text">
-                    <p class="why-choose-intro">
-                        Akoth is the visionary behind Sylverkerry Images, bringing over a decade of hands-on expertise in events, exhibitions, and brand experiences. Her meticulous attention to detail, creative problem-solving, and commitment to client satisfaction have earned her a trusted reputation in the industry.
-                        <br><br>
-                        Under her leadership, Sylverkerry Images continues to deliver innovative, reliable, and impactful solutions that transform ideas into unforgettable experiences.
-                        <br><br>
-                        Ready to elevate your next event or exhibition? Partner with Akoth and the team at Sylverkerry Images for solutions that deliver results.
-                    </p>
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="member-image-container">
+                        <img src="assets/img/sarah-johnson.jpg" alt="Sarah Johnson - Creative Director" class="member-image">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Sarah Johnson</h3>
+                        <p class="member-role">Creative Director</p>
+                    </div>
+                    <div class="hover-description">
+                        <h3>Sarah Johnson</h3>
+                        <p>Sarah leads our creative team with 8 years of experience in visual storytelling and brand design. Her innovative approach to exhibition design and event aesthetics has transformed countless client visions into stunning realities.</p>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <div class="member-image-container">
+                        <img src="assets/img/michael-chen.jpg" alt="Michael Chen - Technical Director" class="member-image">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Michael Chen</h3>
+                        <p class="member-role">Technical Director</p>
+                    </div>
+                    <div class="hover-description">
+                        <h3>Michael Chen</h3>
+                        <p>Michael ensures flawless execution of all technical aspects of our events and exhibitions. With expertise in audiovisual systems, lighting design, and venue management, he guarantees seamless event delivery every time.</p>
+                    </div>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <div class="member-image-container">
+                        <img src="assets/img/emma-wilson.jpg" alt="Emma Wilson - Project Manager" class="member-image">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Emma Wilson</h3>
+                        <p class="member-role">Project Manager</p>
+                    </div>
+                    <div class="hover-description">
+                        <h3>Emma Wilson</h3>
+                        <p>Emma coordinates all project timelines and client communications with precision and care. Her organizational skills and attention to detail ensure that every event runs smoothly from conception to completion.</p>
+                    </div>
+                </div>
+
+                <!-- Team Member 5 -->
+                <div class="team-member">
+                    <div class="member-image-container">
+                        <img src="assets/img/david-ochieng.jpg" alt="David Ochieng - Marketing Specialist" class="member-image">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">David Ochieng</h3>
+                        <p class="member-role">Marketing Specialist</p>
+                    </div>
+                    <div class="hover-description">
+                        <h3>David Ochieng</h3>
+                        <p>David develops strategic marketing campaigns that amplify our clients' brand presence. His expertise in digital marketing and brand positioning helps maximize the impact of every event and exhibition we create.</p>
+                    </div>
+                </div>
+
+                <!-- Team Member 6 -->
+                <div class="team-member">
+                    <div class="member-image-container">
+                        <img src="assets/img/grace-mwangi.jpg" alt="Grace Mwangi - Operations Manager" class="member-image">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Grace Mwangi</h3>
+                        <p class="member-role">Operations Manager</p>
+                    </div>
+                    <div class="hover-description">
+                        <h3>Grace Mwangi</h3>
+                        <p>Grace oversees day-to-day operations and vendor relationships, ensuring quality control and cost efficiency. Her strategic approach to resource management and team coordination keeps our projects on track and within budget.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-
 
     <!-- CTA Section -->
     <section class="cta-section">
