@@ -282,9 +282,9 @@
     opacity: 1;
 }
 
- /* Team Section - 2 Per Row with Hover */
+         /* Team Section - Responsive Grid */
         .team-section {
-            padding: 40px 0;
+            padding: 60px 0;
             background: #f8f9fa;
             margin: 0;
         }
@@ -301,15 +301,16 @@
         }
 
         .team-title {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #000;
             margin: 0;
+            font-weight: 700;
         }
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -322,6 +323,7 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            height: 500px;
         }
 
         .team-member:hover {
@@ -349,12 +351,16 @@
         }
 
         .member-info {
-            padding: 1rem;
+            padding: 1.5rem;
             text-align: center;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .member-name {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 600;
             color: #000;
             margin: 0;
@@ -362,9 +368,10 @@
         }
 
         .member-role {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #666;
             margin: 0;
+            font-weight: 500;
         }
 
         /* Hover Description Overlay */
@@ -374,9 +381,9 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.92);
             color: white;
-            padding: 1.5rem;
+            padding: 2rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -394,30 +401,87 @@
         }
 
         .hover-description h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin: 0 0 1rem 0;
             color: #fff;
+            font-weight: 600;
         }
 
         .hover-description p {
-            font-size: 0.85rem;
-            line-height: 1.5;
+            font-size: 0.9rem;
+            line-height: 1.6;
             margin: 0;
+            color: #f0f0f0;
         }
 
         /* Responsive Design */
+        @media (max-width: 1024px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
         @media (max-width: 768px) {
+            .team-section {
+                padding: 40px 0;
+            }
+            
+            .team-title {
+                font-size: 2rem;
+            }
+            
             .team-grid {
                 grid-template-columns: 1fr;
                 max-width: 400px;
+                gap: 1.5rem;
+            }
+            
+            .team-member {
+                height: 400px;
             }
             
             .member-image-container {
-                height: 250px;
+                height: 300px;
+            }
+            
+            .member-info {
+                padding: 1rem;
+                height: 100px;
             }
             
             .hover-description {
                 padding: 1.5rem;
+            }
+            
+            .hover-description h3 {
+                font-size: 1.2rem;
+            }
+            
+            .hover-description p {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-container {
+                padding: 0 0.5rem;
+            }
+            
+            .team-member {
+                height: 380px;
+            }
+            
+            .member-image-container {
+                height: 280px;
+            }
+            
+            .member-name {
+                font-size: 1.1rem;
+            }
+            
+            .member-role {
+                font-size: 0.9rem;
             }
         }
 /* CTA Section - Compact */
@@ -783,15 +847,30 @@ body {
                 <!-- Team Member 5 -->
                 <div class="team-member">
                     <div class="member-image-container">
-                        <img src="assets/img/Iska Muga.png" alt="Iska Muga - Finance & Administration" class="member-image">
+                        <img src="assets/img/Joseph Okinyi.png" alt="Joseph Okiny - Lead, Fabrication & Build" class="member-image">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Joseph Okinyi</h3>
+                        <p class="member-role">Lead, Fabrication & Build</p>
+                    </div>
+                    <div class="hover-description">
+                        <h3>Joseph Okinyi</h3>
+                        <p>Responsible for stand fabrication, set design construction, technical build teams, quality control of physical outputs.</p>
+                    </div>
+                </div>
+
+                <!-- Team Member 6 -->
+                <div class="team-member">
+                    <div class="member-image-container">
+                        <img src="assets/img/Iska Muga.png" alt="Iska Muga - Marketing & Communications" class="member-image">
                     </div>
                     <div class="member-info">
                         <h3 class="member-name">Iska Muga</h3>
-                        <p class="member-role">Finance & Administration</p>
+                        <p class="member-role">Marketing & Communications</p>
                     </div>
                     <div class="hover-description">
                         <h3>Iska Muga</h3>
-                        <p>Iska manages the company's financial health and administrative operations. Oversees all internal processes to ensure operational efficiency and sustainability.</p>
+                        <p>Iska oversees the development and execution of the company's brand strategy, ensuring consistent and impactful brand positioning across all platforms.</p>
                     </div>
                 </div>
             </div>
